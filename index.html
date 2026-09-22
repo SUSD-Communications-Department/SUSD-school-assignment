@@ -39,7 +39,27 @@
 		main {
 			max-width: 1000px;
 			margin: 0 auto;
-			padding: 50px 24px 70px;
+			padding: 42px 24px 70px;
+		}
+
+		.development-notice {
+			margin-bottom: 32px;
+			padding: 18px 22px;
+			background: #fff4cc;
+			border-left: 6px solid #d89b00;
+			border-radius: 4px;
+		}
+
+		.development-notice h1 {
+			margin: 0 0 5px;
+			color: #123f55;
+			font-size: 20px;
+			line-height: 1.3;
+		}
+
+		.development-notice p {
+			margin: 0;
+			font-size: 15px;
 		}
 
 		.intro {
@@ -56,7 +76,7 @@
 			text-transform: uppercase;
 		}
 
-		h1 {
+		h2 {
 			margin: 0 0 14px;
 			color: #123f55;
 			font-size: 38px;
@@ -82,7 +102,7 @@
 			border-bottom: 1px solid #dce4e7;
 		}
 
-		.tool-heading h2 {
+		.tool-heading h3 {
 			margin: 0 0 4px;
 			color: #123f55;
 			font-size: 22px;
@@ -99,6 +119,10 @@
 
 		.form-group {
 			margin-bottom: 26px;
+		}
+
+		.form-group[hidden] {
+			display: none;
 		}
 
 		label {
@@ -147,20 +171,75 @@
 			outline-offset: 3px;
 		}
 
+		.result {
+			display: none;
+			margin-top: 30px;
+			border: 2px solid #008294;
+			border-radius: 8px;
+			overflow: hidden;
+		}
+
+		.result.active {
+			display: block;
+		}
+
+		.result-header {
+			background: #008294;
+			padding: 12px 20px;
+			color: #ffffff;
+			font-size: 14px;
+			font-weight: 700;
+			letter-spacing: .5px;
+			text-transform: uppercase;
+		}
+
+		.result-body {
+			padding: 24px;
+		}
+
+		.result-label {
+			margin: 0 0 4px;
+			color: #52666f;
+			font-size: 14px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		.result-school {
+			margin: 0 0 12px;
+			color: #123f55;
+			font-size: 30px;
+			font-weight: 800;
+			line-height: 1.15;
+		}
+
+		.result-body p {
+			margin: 0;
+		}
+
+		.fake-data {
+			margin-top: 18px !important;
+			padding-top: 16px;
+			border-top: 1px solid #dce4e7;
+			color: #7a4f00;
+			font-size: 13px;
+			font-weight: 700;
+		}
+
 		.note {
-			margin-top: 24px;
+			margin-top: 28px;
 			padding-top: 20px;
 			border-top: 1px solid #dce4e7;
-			font-size: 13px;
 			color: #52666f;
+			font-size: 13px;
 		}
 
 		@media (max-width: 600px) {
 			main {
-				padding: 32px 18px 50px;
+				padding: 28px 18px 50px;
 			}
 
-			h1 {
+			h2 {
 				font-size: 30px;
 			}
 
@@ -176,12 +255,16 @@
 			button {
 				width: 100%;
 			}
+
+			.result-school {
+				font-size: 26px;
+			}
 		}
 	</style>
 </head>
 
 <body>
-<h1><strong style="color:#ffd2d2; background-color:#ff3300;">IN DEVELOPMENT</strong> — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.</h1>
+
 	<header class="page-header">
 		<div class="page-header-inner">
 			<p class="district-name">Scottsdale Unified School District</p>
@@ -190,21 +273,33 @@
 
 	<main>
 
+		<section class="development-notice" aria-labelledby="development-title">
+			<h1 id="development-title">
+				IN DEVELOPMENT — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
+			</h1>
+
+			<p>
+				All school names, geographic areas and school assignments displayed
+				in this development version are fictional and are being used only
+				to test the functionality of this tool.
+			</p>
+		</section>
+
 		<section class="intro">
 			<p class="eyebrow">2027–28 School Year</p>
 
-			<h1>Find Your Student's School</h1>
+			<h2>Find Your Student's School</h2>
 
 			<p>
-				Use this tool to find your student's school assignment for the
-				2027–28 school year.
+				Use this tool to see how the school assignment process could work
+				for families affected by school changes.
 			</p>
 		</section>
 
 		<section class="tool" aria-labelledby="tool-title">
 
 			<div class="tool-heading">
-				<h2 id="tool-title">School Assignment</h2>
+				<h3 id="tool-title">School Assignment</h3>
 				<p>Tell us about your student to get started.</p>
 			</div>
 
@@ -217,10 +312,13 @@
 							What school does your student currently attend?
 						</label>
 
-						<select id="current-school" name="current-school" required>
+						<select id="current-school" required>
 							<option value="">Select a school</option>
-							<option value="example-one">Example School One</option>
-							<option value="example-two">Example School Two</option>
+							<option value="ironwood">Ironwood ES</option>
+							<option value="sunrise">Sunrise ES</option>
+							<option value="bluebird">Bluebird ES</option>
+							<option value="silverleaf">Silverleaf K-8</option>
+							<option value="trailhead">Trailhead K-8</option>
 						</select>
 					</div>
 
@@ -229,7 +327,7 @@
 							What grade is your student currently in?
 						</label>
 
-						<select id="current-grade" name="current-grade" required>
+						<select id="current-grade" required>
 							<option value="">Select a grade</option>
 							<option value="K">Kindergarten</option>
 							<option value="1">Grade 1</option>
@@ -240,9 +338,19 @@
 							<option value="6">Grade 6</option>
 							<option value="7">Grade 7</option>
 							<option value="8">Grade 8</option>
-							<option value="9">Grade 9</option>
-							<option value="10">Grade 10</option>
-							<option value="11">Grade 11</option>
+						</select>
+					</div>
+
+					<div class="form-group" id="area-group" hidden>
+						<label for="area">
+							Which development area best matches your home?
+						</label>
+
+						<select id="area">
+							<option value="">Select an area</option>
+							<option value="a">Development Area A</option>
+							<option value="b">Development Area B</option>
+							<option value="c">Development Area C</option>
 						</select>
 					</div>
 
@@ -250,11 +358,29 @@
 
 				</form>
 
+				<div id="result" class="result" aria-live="polite">
+					<div class="result-header">
+						Development Result
+					</div>
+
+					<div class="result-body">
+						<p class="result-label">2027–28 School</p>
+
+						<p class="result-school" id="result-school"></p>
+
+						<p id="result-description"></p>
+
+						<p class="fake-data">
+							Development data only — this is a fictional school assignment.
+						</p>
+					</div>
+				</div>
+
 				<div class="note">
-					This tool is provided to help families understand school assignments
-					for the 2027–28 school year. Final enrollment and school placement
-					are subject to Scottsdale Unified School District enrollment policies
-					and eligibility requirements.
+					This development tool contains fictional school names, geographic
+					areas and assignments. It is being used to test functionality only
+					and does not represent a Governing Board decision, attendance
+					boundary, enrollment determination or future school assignment.
 				</div>
 
 			</div>
@@ -264,13 +390,150 @@
 	</main>
 
 	<script>
-		document
-			.getElementById("assignment-form")
-			.addEventListener("submit", function(event) {
-				event.preventDefault();
 
-				alert("The SUSD school assignment logic will be added next.");
+		/*
+			DEVELOPMENT DATA ONLY
+
+			All schools, areas and assignments below are fictional.
+			They are designed to test branching assignment logic.
+		*/
+
+		const developmentAssignments = {
+
+			ironwood: {
+				name: "Ironwood ES",
+				requiresArea: true,
+				assignments: {
+					a: "Painted Sky ES",
+					b: "Juniper ES",
+					c: "Willow Creek ES"
+				}
+			},
+
+			sunrise: {
+				name: "Sunrise ES",
+				requiresArea: false,
+				assignments: {
+					default: "Starlight ES"
+				}
+			},
+
+			bluebird: {
+				name: "Bluebird ES",
+				requiresArea: true,
+				assignments: {
+					a: "Juniper ES",
+					b: "Painted Sky ES",
+					c: "Starlight ES"
+				}
+			},
+
+			silverleaf: {
+				name: "Silverleaf K-8",
+				requiresArea: true,
+				assignments: {
+					a: "Highland MS",
+					b: "Horizon MS",
+					c: "Ridgeline MS"
+				}
+			},
+
+			trailhead: {
+				name: "Trailhead K-8",
+				requiresArea: false,
+				assignments: {
+					default: "Vista Peak MS"
+				}
+			}
+
+		};
+
+
+		const schoolSelect = document.getElementById("current-school");
+		const gradeSelect = document.getElementById("current-grade");
+		const areaGroup = document.getElementById("area-group");
+		const areaSelect = document.getElementById("area");
+		const form = document.getElementById("assignment-form");
+		const result = document.getElementById("result");
+		const resultSchool = document.getElementById("result-school");
+		const resultDescription = document.getElementById("result-description");
+
+
+		schoolSelect.addEventListener("change", function() {
+
+			const selectedSchool = developmentAssignments[this.value];
+
+			result.classList.remove("active");
+
+			if (selectedSchool && selectedSchool.requiresArea) {
+				areaGroup.hidden = false;
+				areaSelect.required = true;
+			} else {
+				areaGroup.hidden = true;
+				areaSelect.required = false;
+				areaSelect.value = "";
+			}
+
+		});
+
+
+		form.addEventListener("submit", function(event) {
+
+			event.preventDefault();
+
+			const schoolKey = schoolSelect.value;
+			const grade = gradeSelect.value;
+			const area = areaSelect.value;
+
+			const schoolData = developmentAssignments[schoolKey];
+
+			if (!schoolData) {
+				return;
+			}
+
+			let assignedSchool;
+
+			if (schoolData.requiresArea) {
+				assignedSchool = schoolData.assignments[area];
+			} else {
+				assignedSchool = schoolData.assignments.default;
+			}
+
+			if (!assignedSchool) {
+				return;
+			}
+
+			resultSchool.textContent = assignedSchool;
+
+			resultDescription.textContent =
+				"Based on the fictional development information entered for a student currently attending " +
+				schoolData.name +
+				" in " +
+				formatGrade(grade) +
+				", the development tool assigned the student to " +
+				assignedSchool +
+				".";
+
+			result.classList.add("active");
+
+			result.scrollIntoView({
+				behavior: "smooth",
+				block: "nearest"
 			});
+
+		});
+
+
+		function formatGrade(grade) {
+
+			if (grade === "K") {
+				return "Kindergarten";
+			}
+
+			return "Grade " + grade;
+
+		}
+
 	</script>
 
 </body>
