@@ -20,46 +20,29 @@
 			line-height: 1.5;
 		}
 
-		/* HEADER */
-
-		.site-header {
-			background: #123f55;
-			padding: 22px 24px;
-		}
-
-		.header-inner {
-			max-width: 1100px;
-			margin: 0 auto;
-		}
-
-		.site-logo {
-			display: block;
-			width: 100%;
-			max-width: 300px;
-			height: auto;
-		}
-
 		/* DEVELOPMENT NOTICE */
 
 		.development-notice {
+			padding: 17px 24px;
 			background: #ffe080;
-			padding: 18px 24px;
-			text-align: center;
 			border-bottom: 1px solid #e5c65e;
+			text-align: center;
 		}
 
 		.development-notice h1 {
-			margin: 0 0 5px;
+			max-width: 1100px;
+			margin: 0 auto 5px;
 			color: #123f55;
 			font-size: 19px;
 			font-weight: 800;
+			line-height: 1.35;
 		}
 
 		.development-notice p {
 			max-width: 900px;
 			margin: 0 auto;
-			font-size: 14px;
 			color: #253746;
+			font-size: 14px;
 		}
 
 		/* PAGE */
@@ -67,38 +50,71 @@
 		main {
 			max-width: 900px;
 			margin: 0 auto;
-			padding: 42px 24px 60px;
+			padding: 36px 24px 60px;
+		}
+
+		/* HERO */
+
+		.intro-card {
+			margin-bottom: 24px;
+			overflow: hidden;
+			background: #123f55;
+			border-radius: 12px;
+			color: #ffffff;
+			text-align: center;
+			box-shadow: 0 3px 12px rgba(0,0,0,.08);
+		}
+
+		.intro-accent {
+			height: 10px;
+			background: #008294;
+		}
+
+		.intro-content {
+			padding: 30px 32px 32px;
+		}
+
+		.intro-logo {
+			display: block;
+			width: 100%;
+			max-width: 300px;
+			height: auto;
+			margin: 0 auto 24px;
 		}
 
 		.eyebrow {
-			margin: 0 0 6px;
-			color: #008294;
+			margin: 0 0 7px;
+			color: #bde9eb;
 			font-size: 14px;
 			font-weight: 800;
 			letter-spacing: 1px;
 			text-transform: uppercase;
 		}
 
-		h2 {
+		.intro-card h2 {
 			margin: 0 0 10px;
-			color: #123f55;
+			color: #ffffff;
 			font-size: 36px;
+			font-weight: 800;
 			line-height: 1.15;
 		}
 
 		.intro {
-			margin: 0 0 24px;
+			max-width: 700px;
+			margin: 0 auto;
+			color: #ffffff;
 			font-size: 17px;
+			line-height: 1.5;
 		}
 
 		/* ENROLLMENT NOTICE */
 
 		.enrollment-notice {
-			margin: 0 0 26px;
+			margin: 0 0 24px;
 			padding: 15px 18px;
 			background: #ffffff;
 			border-left: 5px solid #008294;
-			border-radius: 5px;
+			border-radius: 6px;
 			box-shadow: 0 2px 8px rgba(0,0,0,.05);
 		}
 
@@ -109,10 +125,15 @@
 		.enrollment-notice a {
 			color: #007681;
 			font-weight: 700;
+			text-decoration-thickness: 1px;
 			text-underline-offset: 3px;
 		}
 
-		/* TOOL */
+		.enrollment-notice a:hover {
+			color: #123f55;
+		}
+
+		/* TOOL CARD */
 
 		.tool-card {
 			overflow: hidden;
@@ -132,11 +153,14 @@
 			margin: 0;
 			color: #123f55;
 			font-size: 21px;
+			line-height: 1.3;
 		}
 
 		.tool-body {
 			padding: 26px;
 		}
+
+		/* FORM */
 
 		.form-group {
 			margin-bottom: 24px;
@@ -155,6 +179,7 @@
 			margin: -2px 0 8px;
 			color: #66757d;
 			font-size: 13px;
+			line-height: 1.45;
 		}
 
 		select {
@@ -164,6 +189,7 @@
 			border-radius: 5px;
 			background: #ffffff;
 			color: #253746;
+			font-family: inherit;
 			font-size: 16px;
 		}
 
@@ -173,7 +199,13 @@
 		}
 
 		optgroup {
+			color: #123f55;
 			font-weight: 700;
+		}
+
+		option {
+			color: #253746;
+			font-weight: 400;
 		}
 
 		button {
@@ -183,6 +215,7 @@
 			border-radius: 5px;
 			background: #008294;
 			color: #ffffff;
+			font-family: inherit;
 			font-size: 16px;
 			font-weight: 700;
 			cursor: pointer;
@@ -205,7 +238,7 @@
 			padding: 24px;
 			background: #eaf7f8;
 			border-left: 6px solid #008294;
-			border-radius: 5px;
+			border-radius: 6px;
 		}
 
 		.result.active {
@@ -226,6 +259,7 @@
 			color: #123f55;
 			font-size: 30px;
 			font-weight: 800;
+			line-height: 1.2;
 		}
 
 		.result-status {
@@ -242,34 +276,51 @@
 			margin: 15px 0 0;
 			padding-top: 13px;
 			border-top: 1px solid #c6dfe1;
-			font-size: 13px;
 			color: #56676e;
+			font-size: 13px;
+			line-height: 1.45;
 		}
 
-		/* FOOT NOTE */
+		/* BOTTOM DISCLAIMER */
 
 		.page-disclaimer {
 			margin: 24px 4px 0;
 			color: #68787e;
 			font-size: 13px;
+			line-height: 1.5;
 		}
+
+		/* MOBILE */
 
 		@media (max-width: 600px) {
 
-			.site-header {
-				padding: 18px 20px;
-			}
-
-			.site-logo {
-				max-width: 250px;
-			}
-
 			main {
-				padding: 30px 18px 45px;
+				padding: 24px 16px 45px;
 			}
 
-			h2 {
+			.development-notice {
+				padding: 15px 18px;
+			}
+
+			.development-notice h1 {
+				font-size: 16px;
+			}
+
+			.intro-content {
+				padding: 26px 20px 28px;
+			}
+
+			.intro-logo {
+				max-width: 260px;
+				margin-bottom: 21px;
+			}
+
+			.intro-card h2 {
 				font-size: 30px;
+			}
+
+			.intro {
+				font-size: 16px;
 			}
 
 			.tool-body {
@@ -280,6 +331,10 @@
 				font-size: 26px;
 			}
 
+			button {
+				width: 100%;
+			}
+
 		}
 
 	</style>
@@ -288,20 +343,13 @@
 
 <body>
 
-	<header class="site-header">
-		<div class="header-inner">
 
-			<img
-				class="site-logo"
-				src="https://resources.finalsite.net/images/v1785176035/susdorg/yi7owewlhcjmhrk3hv2q/HeaderLogo.svg"
-				alt="Scottsdale Unified School District"
-			>
+	<!-- DEVELOPMENT WARNING -->
 
-		</div>
-	</header>
-
-
-	<section class="development-notice" aria-labelledby="development-heading">
+	<section
+		class="development-notice"
+		aria-labelledby="development-heading"
+	>
 
 		<h1 id="development-heading">
 			IN DEVELOPMENT — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
@@ -314,22 +362,57 @@
 	</section>
 
 
+
 	<main>
 
-		<p class="eyebrow">2027–28 School Year</p>
 
-		<h2>Find Your Student's School</h2>
+		<!-- HERO -->
 
-		<p class="intro">
-			Use this tool to see how the school assignment process could work for families affected by school changes.
-		</p>
+		<section class="intro-card">
 
+			<div
+				class="intro-accent"
+				aria-hidden="true"
+			></div>
+
+			<div class="intro-content">
+
+				<img
+					class="intro-logo"
+					src="https://resources.finalsite.net/images/v1785176035/susdorg/yi7owewlhcjmhrk3hv2q/HeaderLogo.svg"
+					alt="Scottsdale Unified School District"
+				>
+
+				<p class="eyebrow">
+					2027–28 School Year
+				</p>
+
+				<h2>
+					Find Your Student's School
+				</h2>
+
+				<p class="intro">
+					Use this tool to see how the school assignment process could work for families affected by school changes.
+				</p>
+
+			</div>
+
+		</section>
+
+
+
+		<!-- CURRENTLY ENROLLED NOTICE -->
 
 		<div class="enrollment-notice">
 
-			<strong>⚠️ This tool is for currently enrolled SUSD students only.</strong><br>
+			<strong>
+				⚠️ This tool is for currently enrolled SUSD students only.
+			</strong>
+
+			<br>
 
 			New to SUSD?
+
 			<a
 				href="https://www.susd.org/services/enrollment"
 				target="_blank"
@@ -341,10 +424,17 @@
 		</div>
 
 
+
+		<!-- ASSIGNMENT TOOL -->
+
 		<section class="tool-card">
 
 			<div class="tool-header">
-				<h3>Student Information</h3>
+
+				<h3>
+					Student Information
+				</h3>
+
 			</div>
 
 
@@ -361,11 +451,15 @@
 							Current School
 						</label>
 
-						<select id="current-school" required>
+						<select
+							id="current-school"
+							required
+						>
 
 							<option value="">
 								Select a school
 							</option>
+
 
 							<optgroup label="Elementary Schools">
 
@@ -401,6 +495,7 @@
 					</div>
 
 
+
 					<!-- ENROLLMENT STATUS -->
 
 					<div class="form-group">
@@ -413,7 +508,10 @@
 							Select how your student is currently enrolled.
 						</span>
 
-						<select id="enrollment-status" required>
+						<select
+							id="enrollment-status"
+							required
+						>
 
 							<option value="">
 								Select enrollment status
@@ -432,6 +530,7 @@
 					</div>
 
 
+
 					<!-- CURRENT GRADE -->
 
 					<div class="form-group">
@@ -440,28 +539,58 @@
 							Current Grade
 						</label>
 
-						<select id="current-grade" required>
+						<select
+							id="current-grade"
+							required
+						>
 
 							<option value="">
 								Select current grade
 							</option>
 
-							<option value="K">Kindergarten</option>
-							<option value="1">Grade 1</option>
-							<option value="2">Grade 2</option>
-							<option value="3">Grade 3</option>
-							<option value="4">Grade 4</option>
-							<option value="5">Grade 5</option>
-							<option value="6">Grade 6</option>
-							<option value="7">Grade 7</option>
-							<option value="8">Grade 8</option>
+							<option value="K">
+								Kindergarten
+							</option>
+
+							<option value="1">
+								Grade 1
+							</option>
+
+							<option value="2">
+								Grade 2
+							</option>
+
+							<option value="3">
+								Grade 3
+							</option>
+
+							<option value="4">
+								Grade 4
+							</option>
+
+							<option value="5">
+								Grade 5
+							</option>
+
+							<option value="6">
+								Grade 6
+							</option>
+
+							<option value="7">
+								Grade 7
+							</option>
+
+							<option value="8">
+								Grade 8
+							</option>
 
 						</select>
 
 					</div>
 
 
-					<!-- DEVELOPMENT LOCATION -->
+
+					<!-- CONDITIONAL LOCATION QUESTION -->
 
 					<div
 						class="form-group"
@@ -500,12 +629,14 @@
 					</div>
 
 
+
 					<button type="submit">
 						Find My School
 					</button>
 
 
 				</form>
+
 
 
 				<!-- RESULT -->
@@ -541,14 +672,19 @@
 
 				</div>
 
+
 			</div>
 
 		</section>
 
 
+
+		<!-- DEVELOPMENT DISCLAIMER -->
+
 		<p class="page-disclaimer">
 			This development tool contains fictional school names, locations and assignments. It does not represent an approved attendance boundary, enrollment determination, school closure, repurposing decision or future school assignment.
 		</p>
+
 
 	</main>
 
@@ -558,14 +694,28 @@
 
 		/*
 			=========================================================
-			FICTIONAL DEVELOPMENT DATA
+			SUSD SCHOOL ASSIGNMENT TOOL
+			FICTIONAL DEVELOPMENT DATA ONLY
+			=========================================================
+
+			These schools and assignments are fictional.
+
+			Enrollment status is currently collected and displayed
+			but DOES NOT affect the assignment logic.
+
 			=========================================================
 		*/
 
+
 		const developmentAssignments = {
 
+
+			/* ELEMENTARY */
+
 			ironwood: {
+
 				name: "Ironwood ES",
+
 				requiresArea: true,
 
 				areas: {
@@ -586,22 +736,28 @@
 					}
 
 				}
+
 			},
 
 
 			sunrise: {
+
 				name: "Sunrise ES",
+
 				requiresArea: false,
 
 				default: {
 					elementary: "Starlight ES",
 					middle: "Vista Peak MS"
 				}
+
 			},
 
 
 			bluebird: {
+
 				name: "Bluebird ES",
+
 				requiresArea: true,
 
 				areas: {
@@ -622,11 +778,17 @@
 					}
 
 				}
+
 			},
 
 
+
+			/* K–8 */
+
 			silverleaf: {
+
 				name: "Silverleaf K-8",
+
 				requiresArea: true,
 
 				areas: {
@@ -650,11 +812,14 @@
 					}
 
 				}
+
 			},
 
 
 			trailhead: {
+
 				name: "Trailhead K-8",
+
 				requiresArea: false,
 
 				default: {
@@ -662,11 +827,16 @@
 					middle: "Trailhead K-8",
 					high: "Northstar HS"
 				}
+
 			}
 
 		};
 
 
+
+		/*
+			FORM ELEMENTS
+		*/
 
 		const schoolSelect =
 			document.getElementById("current-school");
@@ -711,7 +881,9 @@
 				const selectedSchool =
 					developmentAssignments[this.value];
 
+
 				clearResult();
+
 
 				if (
 					selectedSchool &&
@@ -719,12 +891,15 @@
 				) {
 
 					areaGroup.hidden = false;
+
 					areaSelect.required = true;
 
 				} else {
 
 					areaGroup.hidden = true;
+
 					areaSelect.required = false;
+
 					areaSelect.value = "";
 
 				}
@@ -733,6 +908,10 @@
 		);
 
 
+
+		/*
+			CLEAR OLD RESULTS WHEN ANSWERS CHANGE
+		*/
 
 		enrollmentStatusSelect.addEventListener(
 			"change",
@@ -754,7 +933,7 @@
 
 
 		/*
-			PROCESS ASSIGNMENT
+			PROCESS SCHOOL ASSIGNMENT
 		*/
 
 		form.addEventListener(
@@ -767,11 +946,14 @@
 				const schoolKey =
 					schoolSelect.value;
 
+
 				const enrollmentStatus =
 					enrollmentStatusSelect.value;
 
+
 				const currentGrade =
 					gradeSelect.value;
+
 
 				const area =
 					areaSelect.value;
@@ -781,29 +963,47 @@
 					developmentAssignments[schoolKey];
 
 
+
+				/*
+					VERIFY REQUIRED ANSWERS
+				*/
+
 				if (
 					!schoolData ||
 					!enrollmentStatus ||
 					currentGrade === ""
 				) {
+
 					return;
+
 				}
 
 
+
+				/*
+					GET CORRECT GEOGRAPHIC
+					ASSIGNMENT SET
+				*/
 
 				let assignmentSet;
 
 
 				if (schoolData.requiresArea) {
 
+
 					if (!area) {
+
 						return;
+
 					}
+
 
 					assignmentSet =
 						schoolData.areas[area];
 
+
 				} else {
+
 
 					assignmentSet =
 						schoolData.default;
@@ -812,23 +1012,44 @@
 
 
 
+				/*
+					DETERMINE NEXT YEAR'S GRADE
+				*/
+
 				const nextGrade =
 					getNextGrade(currentGrade);
 
 
+
+				/*
+					DETERMINE NEXT YEAR'S
+					SCHOOL LEVEL
+				*/
+
 				const schoolLevel =
 					getSchoolLevel(nextGrade);
 
+
+
+				/*
+					FIND FICTIONAL ASSIGNMENT
+				*/
 
 				const assignedSchool =
 					assignmentSet[schoolLevel];
 
 
 
+				/*
+					NO ASSIGNMENT AVAILABLE
+				*/
+
 				if (!assignedSchool) {
+
 
 					resultSchool.textContent =
 						"Assignment Not Available";
+
 
 					resultStatus.textContent =
 						"Enrollment Status: " +
@@ -836,18 +1057,25 @@
 							enrollmentStatus
 						);
 
+
 					resultDescription.textContent =
 						"This fictional development scenario does not currently contain an assignment for " +
 						formatGrade(nextGrade) +
 						".";
 
+
 					result.classList.add("active");
+
 
 					return;
 
 				}
 
 
+
+				/*
+					DISPLAY ASSIGNMENT
+				*/
 
 				resultSchool.textContent =
 					assignedSchool;
@@ -874,12 +1102,15 @@
 
 				if (schoolData.requiresArea) {
 
+
 					description +=
 						" Based on the location information you provided, this fictional development scenario assigns the student to " +
 						assignedSchool +
 						".";
 
+
 				} else {
+
 
 					description +=
 						" In this fictional development scenario, the student is assigned to " +
@@ -887,6 +1118,7 @@
 						".";
 
 				}
+
 
 
 				resultDescription.textContent =
@@ -906,11 +1138,18 @@
 
 
 
+		/*
+			NEXT GRADE
+		*/
+
 		function getNextGrade(currentGrade) {
 
 			if (currentGrade === "K") {
+
 				return "1";
+
 			}
+
 
 			return String(
 				Number(currentGrade) + 1
@@ -920,18 +1159,35 @@
 
 
 
+		/*
+			SCHOOL LEVEL
+
+			DEVELOPMENT LOGIC ONLY:
+
+			K–5 = Elementary
+			6–8 = Middle
+			9–12 = High
+		*/
+
 		function getSchoolLevel(grade) {
 
 			const gradeNumber =
 				Number(grade);
 
+
 			if (gradeNumber <= 5) {
+
 				return "elementary";
+
 			}
 
+
 			if (gradeNumber <= 8) {
+
 				return "middle";
+
 			}
+
 
 			return "high";
 
@@ -939,11 +1195,18 @@
 
 
 
+		/*
+			FORMAT GRADE
+		*/
+
 		function formatGrade(grade) {
 
 			if (grade === "K") {
+
 				return "Kindergarten";
+
 			}
+
 
 			return "Grade " + grade;
 
@@ -951,15 +1214,25 @@
 
 
 
+		/*
+			FORMAT ENROLLMENT STATUS
+		*/
+
 		function formatEnrollmentStatus(status) {
 
 			if (status === "resident") {
+
 				return "Resident (Home School)";
+
 			}
 
+
 			if (status === "open-enrollment") {
+
 				return "Open Enrollment";
+
 			}
+
 
 			return "";
 
@@ -967,17 +1240,24 @@
 
 
 
+		/*
+			CLEAR PREVIOUS RESULT
+		*/
+
 		function clearResult() {
 
 			result.classList.remove("active");
 
 			resultSchool.textContent = "";
+
 			resultStatus.textContent = "";
+
 			resultDescription.textContent = "";
 
 		}
 
 	</script>
+
 
 </body>
 </html>
