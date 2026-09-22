@@ -391,150 +391,368 @@
 
 	<script>
 
-		/*
-			DEVELOPMENT DATA ONLY
+	/*
+		=========================================================
+		SUSD SCHOOL ASSIGNMENT TOOL — DEVELOPMENT DATA
+		=========================================================
 
-			All schools, areas and assignments below are fictional.
-			They are designed to test branching assignment logic.
+		All schools, geographic areas and assignments below
+		are FICTIONAL.
+
+		This data exists only to test the functionality of the
+		school assignment tool and does not represent any
+		Scottsdale Unified School District Governing Board
+		decision, attendance boundary or school assignment.
+		=========================================================
+	*/
+
+	const developmentAssignments = {
+
+		ironwood: {
+			name: "Ironwood ES",
+			requiresArea: true,
+
+			areas: {
+				a: {
+					elementary: "Painted Sky ES",
+					middle: "Highland MS"
+				},
+				b: {
+					elementary: "Juniper ES",
+					middle: "Horizon MS"
+				},
+				c: {
+					elementary: "Willow Creek ES",
+					middle: "Ridgeline MS"
+				}
+			}
+		},
+
+		sunrise: {
+			name: "Sunrise ES",
+			requiresArea: false,
+
+			default: {
+				elementary: "Starlight ES",
+				middle: "Vista Peak MS"
+			}
+		},
+
+		bluebird: {
+			name: "Bluebird ES",
+			requiresArea: true,
+
+			areas: {
+				a: {
+					elementary: "Juniper ES",
+					middle: "Horizon MS"
+				},
+				b: {
+					elementary: "Painted Sky ES",
+					middle: "Highland MS"
+				},
+				c: {
+					elementary: "Starlight ES",
+					middle: "Vista Peak MS"
+				}
+			}
+		},
+
+		silverleaf: {
+			name: "Silverleaf K-8",
+			requiresArea: true,
+
+			areas: {
+				a: {
+					elementary: "Silverleaf K-8",
+					middle: "Highland MS",
+					high: "Northstar HS"
+				},
+				b: {
+					elementary: "Silverleaf K-8",
+					middle: "Horizon MS",
+					high: "Canyon View HS"
+				},
+				c: {
+					elementary: "Silverleaf K-8",
+					middle: "Ridgeline MS",
+					high: "Sonoran Hills HS"
+				}
+			}
+		},
+
+		trailhead: {
+			name: "Trailhead K-8",
+			requiresArea: false,
+
+			default: {
+				elementary: "Trailhead K-8",
+				middle: "Trailhead K-8",
+				high: "Northstar HS"
+			}
+		}
+
+	};
+
+
+	const schoolSelect = document.getElementById("current-school");
+	const gradeSelect = document.getElementById("current-grade");
+	const areaGroup = document.getElementById("area-group");
+	const areaSelect = document.getElementById("area");
+	const form = document.getElementById("assignment-form");
+
+	const result = document.getElementById("result");
+	const resultSchool = document.getElementById("result-school");
+	const resultDescription = document.getElementById("result-description");
+
+
+	/*
+		SHOW THE GEOGRAPHIC QUESTION ONLY WHEN NEEDED
+	*/
+
+	schoolSelect.addEventListener("change", function() {
+
+		const selectedSchool = developmentAssignments[this.value];
+
+		clearResult();
+
+		if (selectedSchool && selectedSchool.requiresArea) {
+
+			areaGroup.hidden = false;
+			areaSelect.required = true;
+
+		} else {
+
+			areaGroup.hidden = true;
+			areaSelect.required = false;
+			areaSelect.value = "";
+
+		}
+
+	});
+
+
+	/*
+		CLEAR OLD RESULT WHEN GRADE CHANGES
+	*/
+
+	gradeSelect.addEventListener("change", function() {
+		clearResult();
+	});
+
+
+	areaSelect.addEventListener("change", function() {
+		clearResult();
+	});
+
+
+	/*
+		PROCESS SCHOOL ASSIGNMENT
+	*/
+
+	form.addEventListener("submit", function(event) {
+
+		event.preventDefault();
+
+		const schoolKey = schoolSelect.value;
+		const currentGrade = gradeSelect.value;
+		const area = areaSelect.value;
+
+		const schoolData = developmentAssignments[schoolKey];
+
+		if (!schoolData || currentGrade === "") {
+			return;
+		}
+
+
+		/*
+			GET THE CORRECT ASSIGNMENT SET
 		*/
 
-		const developmentAssignments = {
+		let assignmentSet;
 
-			ironwood: {
-				name: "Ironwood ES",
-				requiresArea: true,
-				assignments: {
-					a: "Painted Sky ES",
-					b: "Juniper ES",
-					c: "Willow Creek ES"
-				}
-			},
+		if (schoolData.requiresArea) {
 
-			sunrise: {
-				name: "Sunrise ES",
-				requiresArea: false,
-				assignments: {
-					default: "Starlight ES"
-				}
-			},
-
-			bluebird: {
-				name: "Bluebird ES",
-				requiresArea: true,
-				assignments: {
-					a: "Juniper ES",
-					b: "Painted Sky ES",
-					c: "Starlight ES"
-				}
-			},
-
-			silverleaf: {
-				name: "Silverleaf K-8",
-				requiresArea: true,
-				assignments: {
-					a: "Highland MS",
-					b: "Horizon MS",
-					c: "Ridgeline MS"
-				}
-			},
-
-			trailhead: {
-				name: "Trailhead K-8",
-				requiresArea: false,
-				assignments: {
-					default: "Vista Peak MS"
-				}
-			}
-
-		};
-
-
-		const schoolSelect = document.getElementById("current-school");
-		const gradeSelect = document.getElementById("current-grade");
-		const areaGroup = document.getElementById("area-group");
-		const areaSelect = document.getElementById("area");
-		const form = document.getElementById("assignment-form");
-		const result = document.getElementById("result");
-		const resultSchool = document.getElementById("result-school");
-		const resultDescription = document.getElementById("result-description");
-
-
-		schoolSelect.addEventListener("change", function() {
-
-			const selectedSchool = developmentAssignments[this.value];
-
-			result.classList.remove("active");
-
-			if (selectedSchool && selectedSchool.requiresArea) {
-				areaGroup.hidden = false;
-				areaSelect.required = true;
-			} else {
-				areaGroup.hidden = true;
-				areaSelect.required = false;
-				areaSelect.value = "";
-			}
-
-		});
-
-
-		form.addEventListener("submit", function(event) {
-
-			event.preventDefault();
-
-			const schoolKey = schoolSelect.value;
-			const grade = gradeSelect.value;
-			const area = areaSelect.value;
-
-			const schoolData = developmentAssignments[schoolKey];
-
-			if (!schoolData) {
+			if (!area) {
 				return;
 			}
 
-			let assignedSchool;
+			assignmentSet = schoolData.areas[area];
 
-			if (schoolData.requiresArea) {
-				assignedSchool = schoolData.assignments[area];
-			} else {
-				assignedSchool = schoolData.assignments.default;
-			}
+		} else {
 
-			if (!assignedSchool) {
-				return;
-			}
+			assignmentSet = schoolData.default;
 
-			resultSchool.textContent = assignedSchool;
+		}
+
+
+		/*
+			DETERMINE NEXT YEAR'S GRADE
+		*/
+
+		const nextGrade = getNextGrade(currentGrade);
+
+
+		/*
+			DETERMINE SCHOOL LEVEL
+		*/
+
+		const schoolLevel = getSchoolLevel(nextGrade);
+
+
+		/*
+			LOOK UP THE FICTIONAL SCHOOL
+		*/
+
+		const assignedSchool = assignmentSet[schoolLevel];
+
+		if (!assignedSchool) {
+
+			resultSchool.textContent = "Assignment Not Available";
 
 			resultDescription.textContent =
-				"Based on the fictional development information entered for a student currently attending " +
-				schoolData.name +
-				" in " +
-				formatGrade(grade) +
-				", the development tool assigned the student to " +
-				assignedSchool +
+				"This fictional development scenario does not currently contain an assignment for " +
+				formatGrade(nextGrade) +
 				".";
 
 			result.classList.add("active");
 
-			result.scrollIntoView({
-				behavior: "smooth",
-				block: "nearest"
-			});
-
-		});
+			return;
+		}
 
 
-		function formatGrade(grade) {
+		/*
+			DISPLAY RESULT
+		*/
 
-			if (grade === "K") {
-				return "Kindergarten";
-			}
+		resultSchool.textContent = assignedSchool;
 
-			return "Grade " + grade;
+		let description =
+			"Your student is currently in " +
+			formatGrade(currentGrade) +
+			" at " +
+			schoolData.name +
+			". Next year, your student will be in " +
+			formatGrade(nextGrade) +
+			".";
+
+		if (schoolData.requiresArea) {
+
+			description +=
+				" Based on " +
+				getAreaName(area) +
+				", this fictional development scenario assigns the student to " +
+				assignedSchool +
+				".";
+
+		} else {
+
+			description +=
+				" In this fictional development scenario, the student is assigned to " +
+				assignedSchool +
+				".";
 
 		}
 
-	</script>
+		resultDescription.textContent = description;
+
+		result.classList.add("active");
+
+		result.scrollIntoView({
+			behavior: "smooth",
+			block: "nearest"
+		});
+
+	});
+
+
+	/*
+		RETURN NEXT GRADE
+	*/
+
+	function getNextGrade(currentGrade) {
+
+		if (currentGrade === "K") {
+			return "1";
+		}
+
+		return String(Number(currentGrade) + 1);
+
+	}
+
+
+	/*
+		DETERMINE SCHOOL LEVEL FROM NEXT YEAR'S GRADE
+
+		K–5 = Elementary
+		6–8 = Middle
+		9–12 = High
+
+		This is DEVELOPMENT LOGIC ONLY.
+	*/
+
+	function getSchoolLevel(grade) {
+
+		const gradeNumber = Number(grade);
+
+		if (gradeNumber <= 5) {
+			return "elementary";
+		}
+
+		if (gradeNumber <= 8) {
+			return "middle";
+		}
+
+		return "high";
+
+	}
+
+
+	/*
+		FORMAT GRADE FOR DISPLAY
+	*/
+
+	function formatGrade(grade) {
+
+		if (grade === "K") {
+			return "Kindergarten";
+		}
+
+		return "Grade " + grade;
+
+	}
+
+
+	/*
+		DEVELOPMENT AREA LABELS
+	*/
+
+	function getAreaName(area) {
+
+		const areas = {
+			a: "Development Area A",
+			b: "Development Area B",
+			c: "Development Area C"
+		};
+
+		return areas[area] || "the selected development area";
+
+	}
+
+
+	/*
+		CLEAR PREVIOUS RESULT
+	*/
+
+	function clearResult() {
+
+		result.classList.remove("active");
+		resultSchool.textContent = "";
+		resultDescription.textContent = "";
+
+	}
+
+</script>
 
 </body>
 </html>
