@@ -4,157 +4,183 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Find Your Student's School | Scottsdale Unified School District</title>
+	<title>SUSD School Assignment Tool</title>
 
 	<style>
+
 		* {
 			box-sizing: border-box;
 		}
 
 		body {
 			margin: 0;
-			background: #f4f7f8;
-			color: #253746;
 			font-family: Arial, Helvetica, sans-serif;
+			background: #f4f6f7;
+			color: #253746;
 			line-height: 1.5;
 		}
 
-		.page-header {
+		/* HEADER */
+
+		.site-header {
 			background: #123f55;
-			padding: 18px 24px;
+			padding: 22px 24px;
 		}
 
-		.page-header-inner {
-			max-width: 1000px;
+		.header-inner {
+			max-width: 1100px;
 			margin: 0 auto;
 		}
 
-		.district-name {
-			margin: 0;
-			color: #ffffff;
-			font-size: 16px;
-			font-weight: 700;
+		.site-logo {
+			display: block;
+			width: 100%;
+			max-width: 300px;
+			height: auto;
 		}
 
-		main {
-			max-width: 1000px;
-			margin: 0 auto;
-			padding: 42px 24px 70px;
-		}
+		/* DEVELOPMENT NOTICE */
 
 		.development-notice {
-			margin-bottom: 32px;
-			padding: 18px 22px;
-			background: #fff4cc;
-			border-left: 6px solid #d89b00;
-			border-radius: 4px;
+			background: #ffe080;
+			padding: 18px 24px;
+			text-align: center;
+			border-bottom: 1px solid #e5c65e;
 		}
 
 		.development-notice h1 {
 			margin: 0 0 5px;
 			color: #123f55;
-			font-size: 20px;
-			line-height: 1.3;
+			font-size: 19px;
+			font-weight: 800;
 		}
 
 		.development-notice p {
-			margin: 0;
-			font-size: 15px;
+			max-width: 900px;
+			margin: 0 auto;
+			font-size: 14px;
+			color: #253746;
 		}
 
-		.intro {
-			max-width: 760px;
-			margin-bottom: 30px;
+		/* PAGE */
+
+		main {
+			max-width: 900px;
+			margin: 0 auto;
+			padding: 42px 24px 60px;
 		}
 
 		.eyebrow {
-			margin: 0 0 8px;
+			margin: 0 0 6px;
 			color: #008294;
 			font-size: 14px;
-			font-weight: 700;
+			font-weight: 800;
 			letter-spacing: 1px;
 			text-transform: uppercase;
 		}
 
 		h2 {
-			margin: 0 0 14px;
+			margin: 0 0 10px;
 			color: #123f55;
-			font-size: 38px;
+			font-size: 36px;
 			line-height: 1.15;
 		}
 
-		.intro p {
-			margin: 0;
-			font-size: 18px;
+		.intro {
+			margin: 0 0 24px;
+			font-size: 17px;
 		}
 
-		.tool {
+		/* ENROLLMENT NOTICE */
+
+		.enrollment-notice {
+			margin: 0 0 26px;
+			padding: 15px 18px;
 			background: #ffffff;
-			border: 1px solid #dce4e7;
-			border-radius: 8px;
-			box-shadow: 0 3px 12px rgba(0,0,0,.06);
-			overflow: hidden;
+			border-left: 5px solid #008294;
+			border-radius: 5px;
+			box-shadow: 0 2px 8px rgba(0,0,0,.05);
 		}
 
-		.tool-heading {
-			background: #eaf7f8;
-			padding: 22px 28px;
-			border-bottom: 1px solid #dce4e7;
-		}
-
-		.tool-heading h3 {
-			margin: 0 0 4px;
+		.enrollment-notice strong {
 			color: #123f55;
-			font-size: 22px;
 		}
 
-		.tool-heading p {
+		.enrollment-notice a {
+			color: #007681;
+			font-weight: 700;
+			text-underline-offset: 3px;
+		}
+
+		/* TOOL */
+
+		.tool-card {
+			overflow: hidden;
+			background: #ffffff;
+			border: 1px solid #dce3e5;
+			border-radius: 8px;
+			box-shadow: 0 3px 12px rgba(0,0,0,.07);
+		}
+
+		.tool-header {
+			padding: 18px 24px;
+			background: #eaf7f8;
+			border-bottom: 1px solid #d5eaec;
+		}
+
+		.tool-header h3 {
 			margin: 0;
-			font-size: 15px;
+			color: #123f55;
+			font-size: 21px;
 		}
 
 		.tool-body {
-			padding: 30px 28px;
+			padding: 26px;
 		}
 
 		.form-group {
-			margin-bottom: 26px;
-		}
-
-		.form-group[hidden] {
-			display: none;
+			margin-bottom: 24px;
 		}
 
 		label {
 			display: block;
-			margin-bottom: 8px;
+			margin-bottom: 7px;
 			color: #123f55;
 			font-size: 16px;
 			font-weight: 700;
 		}
 
+		.field-help {
+			display: block;
+			margin: -2px 0 8px;
+			color: #66757d;
+			font-size: 13px;
+		}
+
 		select {
 			width: 100%;
-			min-height: 50px;
-			padding: 10px 14px;
-			border: 2px solid #b8c5ca;
-			border-radius: 4px;
+			padding: 13px 42px 13px 14px;
+			border: 1px solid #aebbc0;
+			border-radius: 5px;
 			background: #ffffff;
 			color: #253746;
 			font-size: 16px;
 		}
 
 		select:focus {
+			outline: 3px solid rgba(0,130,148,.2);
 			border-color: #008294;
-			outline: 3px solid rgba(0,130,148,.18);
-			outline-offset: 1px;
+		}
+
+		optgroup {
+			font-weight: 700;
 		}
 
 		button {
-			min-height: 50px;
-			padding: 12px 24px;
+			display: inline-block;
+			padding: 13px 24px;
 			border: 0;
-			border-radius: 4px;
+			border-radius: 5px;
 			background: #008294;
 			color: #ffffff;
 			font-size: 16px;
@@ -167,168 +193,259 @@
 		}
 
 		button:focus {
-			outline: 3px solid #123f55;
-			outline-offset: 3px;
+			outline: 3px solid rgba(0,130,148,.25);
+			outline-offset: 2px;
 		}
+
+		/* RESULT */
 
 		.result {
 			display: none;
-			margin-top: 30px;
-			border: 2px solid #008294;
-			border-radius: 8px;
-			overflow: hidden;
+			margin-top: 28px;
+			padding: 24px;
+			background: #eaf7f8;
+			border-left: 6px solid #008294;
+			border-radius: 5px;
 		}
 
 		.result.active {
 			display: block;
 		}
 
-		.result-header {
-			background: #008294;
-			padding: 12px 20px;
-			color: #ffffff;
-			font-size: 14px;
-			font-weight: 700;
-			letter-spacing: .5px;
-			text-transform: uppercase;
-		}
-
-		.result-body {
-			padding: 24px;
-		}
-
 		.result-label {
 			margin: 0 0 4px;
-			color: #52666f;
-			font-size: 14px;
-			font-weight: 700;
+			color: #008294;
+			font-size: 13px;
+			font-weight: 800;
+			letter-spacing: 1px;
 			text-transform: uppercase;
 		}
 
 		.result-school {
-			margin: 0 0 12px;
+			margin: 0 0 8px;
 			color: #123f55;
 			font-size: 30px;
 			font-weight: 800;
-			line-height: 1.15;
 		}
 
-		.result-body p {
-			margin: 0;
-		}
-
-		.fake-data {
-			margin-top: 18px !important;
-			padding-top: 16px;
-			border-top: 1px solid #dce4e7;
-			color: #7a4f00;
-			font-size: 13px;
+		.result-status {
+			margin: 0 0 12px;
+			color: #123f55;
 			font-weight: 700;
 		}
 
-		.note {
-			margin-top: 28px;
-			padding-top: 20px;
-			border-top: 1px solid #dce4e7;
-			color: #52666f;
+		.result-description {
+			margin: 0;
+		}
+
+		.result-disclaimer {
+			margin: 15px 0 0;
+			padding-top: 13px;
+			border-top: 1px solid #c6dfe1;
+			font-size: 13px;
+			color: #56676e;
+		}
+
+		/* FOOT NOTE */
+
+		.page-disclaimer {
+			margin: 24px 4px 0;
+			color: #68787e;
 			font-size: 13px;
 		}
 
 		@media (max-width: 600px) {
+
+			.site-header {
+				padding: 18px 20px;
+			}
+
+			.site-logo {
+				max-width: 250px;
+			}
+
 			main {
-				padding: 28px 18px 50px;
+				padding: 30px 18px 45px;
 			}
 
 			h2 {
 				font-size: 30px;
 			}
 
-			.intro p {
-				font-size: 16px;
-			}
-
-			.tool-heading,
 			.tool-body {
-				padding: 22px 20px;
-			}
-
-			button {
-				width: 100%;
+				padding: 21px;
 			}
 
 			.result-school {
 				font-size: 26px;
 			}
+
 		}
+
 	</style>
 </head>
 
+
 <body>
 
-	<header class="page-header">
-		<div class="page-header-inner">
-			<p class="district-name">Scottsdale Unified School District</p>
+	<header class="site-header">
+		<div class="header-inner">
+
+			<img
+				class="site-logo"
+				src="https://resources.finalsite.net/images/v1785176035/susdorg/yi7owewlhcjmhrk3hv2q/HeaderLogo.svg"
+				alt="Scottsdale Unified School District"
+			>
+
 		</div>
 	</header>
 
+
+	<section class="development-notice" aria-labelledby="development-heading">
+
+		<h1 id="development-heading">
+			IN DEVELOPMENT — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
+		</h1>
+
+		<p>
+			All school names, geographic areas and school assignments displayed in this development version are fictional and are being used only to test the functionality of this tool.
+		</p>
+
+	</section>
+
+
 	<main>
 
-		<section class="development-notice" aria-labelledby="development-title">
-			<h1 id="development-title">
-				IN DEVELOPMENT — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
-			</h1>
+		<p class="eyebrow">2027–28 School Year</p>
 
-			<p>
-				All school names, geographic areas and school assignments displayed
-				in this development version are fictional and are being used only
-				to test the functionality of this tool.
-			</p>
-		</section>
+		<h2>Find Your Student's School</h2>
 
-		<section class="intro">
-			<p class="eyebrow">2027–28 School Year</p>
+		<p class="intro">
+			Use this tool to see how the school assignment process could work for families affected by school changes.
+		</p>
 
-			<h2>Find Your Student's School</h2>
 
-			<p>
-				Use this tool to see how the school assignment process could work
-				for families affected by school changes.
-			</p>
-		</section>
+		<div class="enrollment-notice">
 
-		<section class="tool" aria-labelledby="tool-title">
+			<strong>⚠️ This tool is for currently enrolled SUSD students only.</strong><br>
 
-			<div class="tool-heading">
-				<h3 id="tool-title">School Assignment</h3>
-				<p>Tell us about your student to get started.</p>
+			New to SUSD?
+			<a
+				href="https://www.susd.org/services/enrollment"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Learn how to enroll
+			</a>.
+
+		</div>
+
+
+		<section class="tool-card">
+
+			<div class="tool-header">
+				<h3>Student Information</h3>
 			</div>
+
 
 			<div class="tool-body">
 
 				<form id="assignment-form">
 
+
+					<!-- CURRENT SCHOOL -->
+
 					<div class="form-group">
+
 						<label for="current-school">
-							What school does your student currently attend?
+							Current School
 						</label>
 
 						<select id="current-school" required>
-							<option value="">Select a school</option>
-							<option value="ironwood">Ironwood ES</option>
-							<option value="sunrise">Sunrise ES</option>
-							<option value="bluebird">Bluebird ES</option>
-							<option value="silverleaf">Silverleaf K-8</option>
-							<option value="trailhead">Trailhead K-8</option>
+
+							<option value="">
+								Select a school
+							</option>
+
+							<optgroup label="Elementary Schools">
+
+								<option value="bluebird">
+									Bluebird ES
+								</option>
+
+								<option value="ironwood">
+									Ironwood ES
+								</option>
+
+								<option value="sunrise">
+									Sunrise ES
+								</option>
+
+							</optgroup>
+
+
+							<optgroup label="K–8 Schools">
+
+								<option value="silverleaf">
+									Silverleaf K-8
+								</option>
+
+								<option value="trailhead">
+									Trailhead K-8
+								</option>
+
+							</optgroup>
+
 						</select>
+
 					</div>
 
+
+					<!-- ENROLLMENT STATUS -->
+
 					<div class="form-group">
+
+						<label for="enrollment-status">
+							Enrollment Status
+						</label>
+
+						<span class="field-help">
+							Select how your student is currently enrolled.
+						</span>
+
+						<select id="enrollment-status" required>
+
+							<option value="">
+								Select enrollment status
+							</option>
+
+							<option value="resident">
+								Resident (Home School)
+							</option>
+
+							<option value="open-enrollment">
+								Open Enrollment
+							</option>
+
+						</select>
+
+					</div>
+
+
+					<!-- CURRENT GRADE -->
+
+					<div class="form-group">
+
 						<label for="current-grade">
-							What grade is your student currently in?
+							Current Grade
 						</label>
 
 						<select id="current-grade" required>
-							<option value="">Select a grade</option>
+
+							<option value="">
+								Select current grade
+							</option>
+
 							<option value="K">Kindergarten</option>
 							<option value="1">Grade 1</option>
 							<option value="2">Grade 2</option>
@@ -338,421 +455,529 @@
 							<option value="6">Grade 6</option>
 							<option value="7">Grade 7</option>
 							<option value="8">Grade 8</option>
+
 						</select>
+
 					</div>
 
-					<div class="form-group" id="area-group" hidden>
+
+					<!-- DEVELOPMENT LOCATION -->
+
+					<div
+						class="form-group"
+						id="area-group"
+						hidden
+					>
+
 						<label for="area">
-							Which development area best matches your home?
+							Which area best describes where you live?
 						</label>
 
+						<span class="field-help">
+							These locations are fictional and are included for development testing only.
+						</span>
+
 						<select id="area">
-							<option value="">Select an area</option>
-							<option value="a">Development Area A</option>
-							<option value="b">Development Area B</option>
-							<option value="c">Development Area C</option>
+
+							<option value="">
+								Select an area
+							</option>
+
+							<option value="a">
+								North of Desert Willow Road
+							</option>
+
+							<option value="b">
+								Between Desert Willow Road and Canyon Trail
+							</option>
+
+							<option value="c">
+								South of Canyon Trail
+							</option>
+
 						</select>
+
 					</div>
 
-					<button type="submit">Find My School</button>
+
+					<button type="submit">
+						Find My School
+					</button>
+
 
 				</form>
 
-				<div id="result" class="result" aria-live="polite">
-					<div class="result-header">
+
+				<!-- RESULT -->
+
+				<div
+					id="result"
+					class="result"
+					aria-live="polite"
+				>
+
+					<p class="result-label">
 						Development Result
-					</div>
+					</p>
 
-					<div class="result-body">
-						<p class="result-label">2027–28 School</p>
+					<div
+						id="result-school"
+						class="result-school"
+					></div>
 
-						<p class="result-school" id="result-school"></p>
+					<p
+						id="result-status"
+						class="result-status"
+					></p>
 
-						<p id="result-description"></p>
+					<p
+						id="result-description"
+						class="result-description"
+					></p>
 
-						<p class="fake-data">
-							Development data only — this is a fictional school assignment.
-						</p>
-					</div>
-				</div>
+					<p class="result-disclaimer">
+						This result uses fictional development data and does not represent a Governing Board decision or official SUSD school assignment.
+					</p>
 
-				<div class="note">
-					This development tool contains fictional school names, geographic
-					areas and assignments. It is being used to test functionality only
-					and does not represent a Governing Board decision, attendance
-					boundary, enrollment determination or future school assignment.
 				</div>
 
 			</div>
 
 		</section>
 
+
+		<p class="page-disclaimer">
+			This development tool contains fictional school names, locations and assignments. It does not represent an approved attendance boundary, enrollment determination, school closure, repurposing decision or future school assignment.
+		</p>
+
 	</main>
+
+
 
 	<script>
 
-	/*
-		=========================================================
-		SUSD SCHOOL ASSIGNMENT TOOL — DEVELOPMENT DATA
-		=========================================================
+		/*
+			=========================================================
+			FICTIONAL DEVELOPMENT DATA
+			=========================================================
+		*/
 
-		All schools, geographic areas and assignments below
-		are FICTIONAL.
+		const developmentAssignments = {
 
-		This data exists only to test the functionality of the
-		school assignment tool and does not represent any
-		Scottsdale Unified School District Governing Board
-		decision, attendance boundary or school assignment.
-		=========================================================
-	*/
+			ironwood: {
+				name: "Ironwood ES",
+				requiresArea: true,
 
-	const developmentAssignments = {
+				areas: {
 
-		ironwood: {
-			name: "Ironwood ES",
-			requiresArea: true,
+					a: {
+						elementary: "Painted Sky ES",
+						middle: "Highland MS"
+					},
 
-			areas: {
-				a: {
-					elementary: "Painted Sky ES",
-					middle: "Highland MS"
-				},
-				b: {
-					elementary: "Juniper ES",
-					middle: "Horizon MS"
-				},
-				c: {
-					elementary: "Willow Creek ES",
-					middle: "Ridgeline MS"
+					b: {
+						elementary: "Juniper ES",
+						middle: "Horizon MS"
+					},
+
+					c: {
+						elementary: "Willow Creek ES",
+						middle: "Ridgeline MS"
+					}
+
 				}
-			}
-		},
+			},
 
-		sunrise: {
-			name: "Sunrise ES",
-			requiresArea: false,
 
-			default: {
-				elementary: "Starlight ES",
-				middle: "Vista Peak MS"
-			}
-		},
+			sunrise: {
+				name: "Sunrise ES",
+				requiresArea: false,
 
-		bluebird: {
-			name: "Bluebird ES",
-			requiresArea: true,
-
-			areas: {
-				a: {
-					elementary: "Juniper ES",
-					middle: "Horizon MS"
-				},
-				b: {
-					elementary: "Painted Sky ES",
-					middle: "Highland MS"
-				},
-				c: {
+				default: {
 					elementary: "Starlight ES",
 					middle: "Vista Peak MS"
 				}
-			}
-		},
+			},
 
-		silverleaf: {
-			name: "Silverleaf K-8",
-			requiresArea: true,
 
-			areas: {
-				a: {
-					elementary: "Silverleaf K-8",
-					middle: "Highland MS",
+			bluebird: {
+				name: "Bluebird ES",
+				requiresArea: true,
+
+				areas: {
+
+					a: {
+						elementary: "Juniper ES",
+						middle: "Horizon MS"
+					},
+
+					b: {
+						elementary: "Painted Sky ES",
+						middle: "Highland MS"
+					},
+
+					c: {
+						elementary: "Starlight ES",
+						middle: "Vista Peak MS"
+					}
+
+				}
+			},
+
+
+			silverleaf: {
+				name: "Silverleaf K-8",
+				requiresArea: true,
+
+				areas: {
+
+					a: {
+						elementary: "Silverleaf K-8",
+						middle: "Highland MS",
+						high: "Northstar HS"
+					},
+
+					b: {
+						elementary: "Silverleaf K-8",
+						middle: "Horizon MS",
+						high: "Canyon View HS"
+					},
+
+					c: {
+						elementary: "Silverleaf K-8",
+						middle: "Ridgeline MS",
+						high: "Sonoran Hills HS"
+					}
+
+				}
+			},
+
+
+			trailhead: {
+				name: "Trailhead K-8",
+				requiresArea: false,
+
+				default: {
+					elementary: "Trailhead K-8",
+					middle: "Trailhead K-8",
 					high: "Northstar HS"
-				},
-				b: {
-					elementary: "Silverleaf K-8",
-					middle: "Horizon MS",
-					high: "Canyon View HS"
-				},
-				c: {
-					elementary: "Silverleaf K-8",
-					middle: "Ridgeline MS",
-					high: "Sonoran Hills HS"
 				}
 			}
-		},
 
-		trailhead: {
-			name: "Trailhead K-8",
-			requiresArea: false,
-
-			default: {
-				elementary: "Trailhead K-8",
-				middle: "Trailhead K-8",
-				high: "Northstar HS"
-			}
-		}
-
-	};
-
-
-	const schoolSelect = document.getElementById("current-school");
-	const gradeSelect = document.getElementById("current-grade");
-	const areaGroup = document.getElementById("area-group");
-	const areaSelect = document.getElementById("area");
-	const form = document.getElementById("assignment-form");
-
-	const result = document.getElementById("result");
-	const resultSchool = document.getElementById("result-school");
-	const resultDescription = document.getElementById("result-description");
-
-
-	/*
-		SHOW THE GEOGRAPHIC QUESTION ONLY WHEN NEEDED
-	*/
-
-	schoolSelect.addEventListener("change", function() {
-
-		const selectedSchool = developmentAssignments[this.value];
-
-		clearResult();
-
-		if (selectedSchool && selectedSchool.requiresArea) {
-
-			areaGroup.hidden = false;
-			areaSelect.required = true;
-
-		} else {
-
-			areaGroup.hidden = true;
-			areaSelect.required = false;
-			areaSelect.value = "";
-
-		}
-
-	});
-
-
-	/*
-		CLEAR OLD RESULT WHEN GRADE CHANGES
-	*/
-
-	gradeSelect.addEventListener("change", function() {
-		clearResult();
-	});
-
-
-	areaSelect.addEventListener("change", function() {
-		clearResult();
-	});
-
-
-	/*
-		PROCESS SCHOOL ASSIGNMENT
-	*/
-
-	form.addEventListener("submit", function(event) {
-
-		event.preventDefault();
-
-		const schoolKey = schoolSelect.value;
-		const currentGrade = gradeSelect.value;
-		const area = areaSelect.value;
-
-		const schoolData = developmentAssignments[schoolKey];
-
-		if (!schoolData || currentGrade === "") {
-			return;
-		}
-
-
-		/*
-			GET THE CORRECT ASSIGNMENT SET
-		*/
-
-		let assignmentSet;
-
-		if (schoolData.requiresArea) {
-
-			if (!area) {
-				return;
-			}
-
-			assignmentSet = schoolData.areas[area];
-
-		} else {
-
-			assignmentSet = schoolData.default;
-
-		}
-
-
-		/*
-			DETERMINE NEXT YEAR'S GRADE
-		*/
-
-		const nextGrade = getNextGrade(currentGrade);
-
-
-		/*
-			DETERMINE SCHOOL LEVEL
-		*/
-
-		const schoolLevel = getSchoolLevel(nextGrade);
-
-
-		/*
-			LOOK UP THE FICTIONAL SCHOOL
-		*/
-
-		const assignedSchool = assignmentSet[schoolLevel];
-
-		if (!assignedSchool) {
-
-			resultSchool.textContent = "Assignment Not Available";
-
-			resultDescription.textContent =
-				"This fictional development scenario does not currently contain an assignment for " +
-				formatGrade(nextGrade) +
-				".";
-
-			result.classList.add("active");
-
-			return;
-		}
-
-
-		/*
-			DISPLAY RESULT
-		*/
-
-		resultSchool.textContent = assignedSchool;
-
-		let description =
-			"Your student is currently in " +
-			formatGrade(currentGrade) +
-			" at " +
-			schoolData.name +
-			". Next year, your student will be in " +
-			formatGrade(nextGrade) +
-			".";
-
-		if (schoolData.requiresArea) {
-
-			description +=
-				" Based on " +
-				getAreaName(area) +
-				", this fictional development scenario assigns the student to " +
-				assignedSchool +
-				".";
-
-		} else {
-
-			description +=
-				" In this fictional development scenario, the student is assigned to " +
-				assignedSchool +
-				".";
-
-		}
-
-		resultDescription.textContent = description;
-
-		result.classList.add("active");
-
-		result.scrollIntoView({
-			behavior: "smooth",
-			block: "nearest"
-		});
-
-	});
-
-
-	/*
-		RETURN NEXT GRADE
-	*/
-
-	function getNextGrade(currentGrade) {
-
-		if (currentGrade === "K") {
-			return "1";
-		}
-
-		return String(Number(currentGrade) + 1);
-
-	}
-
-
-	/*
-		DETERMINE SCHOOL LEVEL FROM NEXT YEAR'S GRADE
-
-		K–5 = Elementary
-		6–8 = Middle
-		9–12 = High
-
-		This is DEVELOPMENT LOGIC ONLY.
-	*/
-
-	function getSchoolLevel(grade) {
-
-		const gradeNumber = Number(grade);
-
-		if (gradeNumber <= 5) {
-			return "elementary";
-		}
-
-		if (gradeNumber <= 8) {
-			return "middle";
-		}
-
-		return "high";
-
-	}
-
-
-	/*
-		FORMAT GRADE FOR DISPLAY
-	*/
-
-	function formatGrade(grade) {
-
-		if (grade === "K") {
-			return "Kindergarten";
-		}
-
-		return "Grade " + grade;
-
-	}
-
-
-	/*
-		DEVELOPMENT AREA LABELS
-	*/
-
-	function getAreaName(area) {
-
-		const areas = {
-			a: "Development Area A",
-			b: "Development Area B",
-			c: "Development Area C"
 		};
 
-		return areas[area] || "the selected development area";
-
-	}
 
 
-	/*
-		CLEAR PREVIOUS RESULT
-	*/
+		const schoolSelect =
+			document.getElementById("current-school");
 
-	function clearResult() {
+		const enrollmentStatusSelect =
+			document.getElementById("enrollment-status");
 
-		result.classList.remove("active");
-		resultSchool.textContent = "";
-		resultDescription.textContent = "";
+		const gradeSelect =
+			document.getElementById("current-grade");
 
-	}
+		const areaGroup =
+			document.getElementById("area-group");
 
-</script>
+		const areaSelect =
+			document.getElementById("area");
+
+		const form =
+			document.getElementById("assignment-form");
+
+		const result =
+			document.getElementById("result");
+
+		const resultSchool =
+			document.getElementById("result-school");
+
+		const resultStatus =
+			document.getElementById("result-status");
+
+		const resultDescription =
+			document.getElementById("result-description");
+
+
+
+		/*
+			SHOW LOCATION QUESTION ONLY WHEN NEEDED
+		*/
+
+		schoolSelect.addEventListener(
+			"change",
+			function() {
+
+				const selectedSchool =
+					developmentAssignments[this.value];
+
+				clearResult();
+
+				if (
+					selectedSchool &&
+					selectedSchool.requiresArea
+				) {
+
+					areaGroup.hidden = false;
+					areaSelect.required = true;
+
+				} else {
+
+					areaGroup.hidden = true;
+					areaSelect.required = false;
+					areaSelect.value = "";
+
+				}
+
+			}
+		);
+
+
+
+		enrollmentStatusSelect.addEventListener(
+			"change",
+			clearResult
+		);
+
+
+		gradeSelect.addEventListener(
+			"change",
+			clearResult
+		);
+
+
+		areaSelect.addEventListener(
+			"change",
+			clearResult
+		);
+
+
+
+		/*
+			PROCESS ASSIGNMENT
+		*/
+
+		form.addEventListener(
+			"submit",
+			function(event) {
+
+				event.preventDefault();
+
+
+				const schoolKey =
+					schoolSelect.value;
+
+				const enrollmentStatus =
+					enrollmentStatusSelect.value;
+
+				const currentGrade =
+					gradeSelect.value;
+
+				const area =
+					areaSelect.value;
+
+
+				const schoolData =
+					developmentAssignments[schoolKey];
+
+
+				if (
+					!schoolData ||
+					!enrollmentStatus ||
+					currentGrade === ""
+				) {
+					return;
+				}
+
+
+
+				let assignmentSet;
+
+
+				if (schoolData.requiresArea) {
+
+					if (!area) {
+						return;
+					}
+
+					assignmentSet =
+						schoolData.areas[area];
+
+				} else {
+
+					assignmentSet =
+						schoolData.default;
+
+				}
+
+
+
+				const nextGrade =
+					getNextGrade(currentGrade);
+
+
+				const schoolLevel =
+					getSchoolLevel(nextGrade);
+
+
+				const assignedSchool =
+					assignmentSet[schoolLevel];
+
+
+
+				if (!assignedSchool) {
+
+					resultSchool.textContent =
+						"Assignment Not Available";
+
+					resultStatus.textContent =
+						"Enrollment Status: " +
+						formatEnrollmentStatus(
+							enrollmentStatus
+						);
+
+					resultDescription.textContent =
+						"This fictional development scenario does not currently contain an assignment for " +
+						formatGrade(nextGrade) +
+						".";
+
+					result.classList.add("active");
+
+					return;
+
+				}
+
+
+
+				resultSchool.textContent =
+					assignedSchool;
+
+
+				resultStatus.textContent =
+					"Enrollment Status: " +
+					formatEnrollmentStatus(
+						enrollmentStatus
+					);
+
+
+
+				let description =
+					"Your student is currently in " +
+					formatGrade(currentGrade) +
+					" at " +
+					schoolData.name +
+					". Next year, your student will be in " +
+					formatGrade(nextGrade) +
+					".";
+
+
+
+				if (schoolData.requiresArea) {
+
+					description +=
+						" Based on the location information you provided, this fictional development scenario assigns the student to " +
+						assignedSchool +
+						".";
+
+				} else {
+
+					description +=
+						" In this fictional development scenario, the student is assigned to " +
+						assignedSchool +
+						".";
+
+				}
+
+
+				resultDescription.textContent =
+					description;
+
+
+				result.classList.add("active");
+
+
+				result.scrollIntoView({
+					behavior: "smooth",
+					block: "nearest"
+				});
+
+			}
+		);
+
+
+
+		function getNextGrade(currentGrade) {
+
+			if (currentGrade === "K") {
+				return "1";
+			}
+
+			return String(
+				Number(currentGrade) + 1
+			);
+
+		}
+
+
+
+		function getSchoolLevel(grade) {
+
+			const gradeNumber =
+				Number(grade);
+
+			if (gradeNumber <= 5) {
+				return "elementary";
+			}
+
+			if (gradeNumber <= 8) {
+				return "middle";
+			}
+
+			return "high";
+
+		}
+
+
+
+		function formatGrade(grade) {
+
+			if (grade === "K") {
+				return "Kindergarten";
+			}
+
+			return "Grade " + grade;
+
+		}
+
+
+
+		function formatEnrollmentStatus(status) {
+
+			if (status === "resident") {
+				return "Resident (Home School)";
+			}
+
+			if (status === "open-enrollment") {
+				return "Open Enrollment";
+			}
+
+			return "";
+
+		}
+
+
+
+		function clearResult() {
+
+			result.classList.remove("active");
+
+			resultSchool.textContent = "";
+			resultStatus.textContent = "";
+			resultDescription.textContent = "";
+
+		}
+
+	</script>
 
 </body>
 </html>
