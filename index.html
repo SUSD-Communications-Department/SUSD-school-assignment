@@ -498,36 +498,55 @@
 
 					<!-- ENROLLMENT STATUS -->
 
-					<div class="form-group">
+<div class="form-group">
 
-						<label for="enrollment-status">
-							Enrollment Status
-						</label>
+	<fieldset class="radio-fieldset">
 
-						<span class="field-help">
-							Select how your student is currently enrolled.
-						</span>
+		<legend>
+			Enrollment Status
+		</legend>
 
-						<select
-							id="enrollment-status"
-							required
-						>
+		<span class="field-help">
+			Select how your student is currently enrolled.
+		</span>
 
-							<option value="">
-								Select enrollment status
-							</option>
+		<div class="radio-options">
 
-							<option value="resident">
-								Resident (Home School)
-							</option>
+			<label class="radio-option">
 
-							<option value="open-enrollment">
-								Open Enrollment
-							</option>
+				<input
+					type="radio"
+					name="enrollment-status"
+					value="resident"
+					required
+				>
 
-						</select>
+				<span>
+					Resident (Home School)
+				</span>
 
-					</div>
+			</label>
+
+
+			<label class="radio-option">
+
+				<input
+					type="radio"
+					name="enrollment-status"
+					value="open-enrollment"
+				>
+
+				<span>
+					Open Enrollment
+				</span>
+
+			</label>
+
+		</div>
+
+	</fieldset>
+
+</div>
 
 
 
