@@ -12,6 +12,45 @@
 			box-sizing: border-box;
 		}
 
+		/* SUSD FOOTER */
+
+.susd-footer {
+	width: 100%;
+	margin-top: 50px;
+	overflow: hidden;
+	background: #005963;
+}
+
+.susd-footer-pattern {
+	height: 70px;
+	background:
+		linear-gradient(
+			rgba(0,130,148,.88),
+			rgba(0,105,118,.88)
+		),
+		linear-gradient(
+			90deg,
+			transparent 0%,
+			rgba(255,255,255,.04) 50%,
+			transparent 100%
+		);
+}
+
+.susd-footer-accent {
+	position: relative;
+	height: 2px;
+	background: #f2b800;
+}
+
+.susd-footer-accent span {
+	display: block;
+}
+
+.susd-footer-bottom {
+	height: 84px;
+	background: #005963;
+}
+
 		body {
 			margin: 0;
 			font-family: Arial, Helvetica, sans-serif;
@@ -1276,7 +1315,13 @@
 		}
 
 	</script>
-
+<footer class="susd-footer" aria-hidden="true">
+	<div class="susd-footer-pattern"></div>
+	<div class="susd-footer-accent">
+		<span></span>
+	</div>
+	<div class="susd-footer-bottom"></div>
+</footer>
 
 </body>
 </html>
