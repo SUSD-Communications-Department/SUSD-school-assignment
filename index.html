@@ -12,7 +12,7 @@
 			box-sizing: border-box;
 		}
 
-		/* SUSD FOOTER */
+	/* SUSD FOOTER */
 
 .susd-footer {
 	width: 100%;
@@ -21,29 +21,75 @@
 	background: #005963;
 }
 
-.susd-footer-pattern {
+.susd-footer-top {
+	position: relative;
 	height: 70px;
 	background:
 		linear-gradient(
-			rgba(0,130,148,.88),
-			rgba(0,105,118,.88)
-		),
-		linear-gradient(
-			90deg,
-			transparent 0%,
-			rgba(255,255,255,.04) 50%,
-			transparent 100%
+			rgba(0,130,148,.92),
+			rgba(0,105,118,.92)
 		);
+	border-bottom: 2px solid #f2b800;
 }
 
-.susd-footer-accent {
-	position: relative;
+/* GOLD MOUNTAIN LINE */
+
+.susd-mountain {
+	position: absolute;
+	left: 130px;
+	bottom: -2px;
+	width: 140px;
+	height: 42px;
+}
+
+.susd-mountain span {
+	position: absolute;
+	display: block;
 	height: 2px;
 	background: #f2b800;
+	transform-origin: left center;
 }
 
-.susd-footer-accent span {
-	display: block;
+.susd-mountain .m1 {
+	left: 0;
+	bottom: 0;
+	width: 38px;
+	transform: rotate(-40deg);
+}
+
+.susd-mountain .m2 {
+	left: 29px;
+	bottom: 24px;
+	width: 15px;
+	transform: rotate(40deg);
+}
+
+.susd-mountain .m3 {
+	left: 40px;
+	bottom: 14px;
+	width: 29px;
+	transform: rotate(-42deg);
+}
+
+.susd-mountain .m4 {
+	left: 61px;
+	bottom: 34px;
+	width: 38px;
+	transform: rotate(43deg);
+}
+
+.susd-mountain .m5 {
+	left: 89px;
+	bottom: 8px;
+	width: 20px;
+	transform: rotate(-34deg);
+}
+
+.susd-mountain .m6 {
+	left: 105px;
+	bottom: 19px;
+	width: 34px;
+	transform: rotate(35deg);
 }
 
 .susd-footer-bottom {
@@ -1316,11 +1362,22 @@
 
 	</script>
 <footer class="susd-footer" aria-hidden="true">
-	<div class="susd-footer-pattern"></div>
-	<div class="susd-footer-accent">
-		<span></span>
+
+	<div class="susd-footer-top">
+
+		<div class="susd-mountain">
+			<span class="m1"></span>
+			<span class="m2"></span>
+			<span class="m3"></span>
+			<span class="m4"></span>
+			<span class="m5"></span>
+			<span class="m6"></span>
+		</div>
+
 	</div>
+
 	<div class="susd-footer-bottom"></div>
+
 </footer>
 
 </body>
