@@ -11,36 +11,48 @@
 		* {
 			box-sizing: border-box;
 		}
-
-	body {
+body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 	color: #253746;
 	line-height: 1.5;
-
-	background:
-		radial-gradient(
-			circle at 8% 18%,
-			rgba(0, 130, 148, 0.12) 0,
-			rgba(0, 130, 148, 0.05) 18%,
-			transparent 38%
-		),
-		radial-gradient(
-			circle at 92% 42%,
-			rgba(18, 63, 85, 0.10) 0,
-			rgba(18, 63, 85, 0.04) 20%,
-			transparent 40%
-		),
-		radial-gradient(
-			circle at 25% 88%,
-			rgba(0, 130, 148, 0.08) 0,
-			transparent 34%
-		),
-		#f4f9f9;
-
-	background-attachment: fixed;
+	background: #f4f9f9;
+	position: relative;
 }
 
+/* GEOMETRIC BACKGROUND */
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+
+	background-image:
+		linear-gradient(
+			30deg,
+			transparent 48%,
+			rgba(0, 130, 148, 0.07) 49%,
+			rgba(0, 130, 148, 0.07) 50%,
+			transparent 51%
+		),
+		linear-gradient(
+			150deg,
+			transparent 48%,
+			rgba(18, 63, 85, 0.05) 49%,
+			rgba(18, 63, 85, 0.05) 50%,
+			transparent 51%
+		);
+
+	background-size:
+		180px 105px,
+		180px 105px;
+
+	background-position:
+		0 0,
+		90px 52px;
+}
 		/* DEVELOPMENT NOTICE */
 
 		.development-notice {
