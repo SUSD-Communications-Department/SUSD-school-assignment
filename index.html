@@ -12,82 +12,30 @@
 			box-sizing: border-box;
 		}
 
-
 		html {
 			background: #f4f9f9;
 		}
 
 		body {
 			margin: 0;
+			min-height: 100vh;
 			font-family: Arial, Helvetica, sans-serif;
 			color: #253746;
 			line-height: 1.5;
-			background: #f4f9f9;
-			position: relative;
-			min-height: 100vh;
+
+			background-color: #f4f9f9;
+
+			background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22208%22%20viewBox%3D%220%200%20240%20208%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23008294%22%20stroke-opacity%3D%22.10%22%20stroke-width%3D%221%22%3E%3Cpath%20d%3D%22M0%200h80l40%2069-40%2070H0l40-70Zm80%200v46l40%2023%2040-23V0m-40%2069v70l40%2023%2040-23V69l-40-23m40%2023%2040-23V0M0%20139l40%2023v46m40-69v46l40%2023%2040-46m40-23%2040%2023m-80%200v46m40-69%2040-70M0%200l40%2023%2040-23M0%2069l40-46m0%20139%2040-23M200%20208v-23l40-23%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+
+			background-size: 240px 208px;
+			background-repeat: repeat;
 		}
 
-		/* GEOMETRIC BACKGROUND */
-
-		.susd-geometric-bg {
-			position: fixed;
-			z-index: 0;
-			top: 50%;
-			left: 0;
-			width: 100%;
-			height: 620px;
-			transform: translateY(-50%);
-			pointer-events: none;
-			overflow: hidden;
-			opacity: 0.10;
-
-			-webkit-mask-image: linear-gradient(
-				to bottom,
-				transparent 0%,
-				#000 14%,
-				#000 86%,
-				transparent 100%
-			);
-
-			mask-image: linear-gradient(
-				to bottom,
-				transparent 0%,
-				#000 14%,
-				#000 86%,
-				transparent 100%
-			);
-		}
-
-		.susd-geometric-bg svg {
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-
-		.geo-lines {
-			fill: none;
-			stroke: #123f55;
-			stroke-width: 1.25;
-			stroke-linecap: square;
-			stroke-linejoin: miter;
-		}
-
-		.geo-light {
-			opacity: 0.4;
-		}
-
-		/* KEEP PAGE CONTENT ABOVE BACKGROUND */
-
-		.development-notice,
-		main,
-		.susd-footer {
-			position: relative;
-			z-index: 1;
-		}
 
 		/* DEVELOPMENT NOTICE */
 
 		.development-notice {
+			position: relative;
 			padding: 17px 24px;
 			background: #ffe080;
 			border-bottom: 1px solid #e5c65e;
@@ -110,13 +58,16 @@
 			font-size: 14px;
 		}
 
+
 		/* PAGE */
 
 		main {
+			position: relative;
 			max-width: 900px;
 			margin: 0 auto;
 			padding: 36px 24px 60px;
 		}
+
 
 		/* HERO */
 
@@ -172,6 +123,7 @@
 			line-height: 1.5;
 		}
 
+
 		/* ENROLLMENT NOTICE */
 
 		.enrollment-notice {
@@ -197,6 +149,7 @@
 		.enrollment-notice a:hover {
 			color: #123f55;
 		}
+
 
 		/* TOOL CARD */
 
@@ -224,6 +177,7 @@
 		.tool-body {
 			padding: 26px;
 		}
+
 
 		/* FORM */
 
@@ -272,6 +226,7 @@
 			color: #253746;
 			font-weight: 400;
 		}
+
 
 		/* RADIO BUTTONS */
 
@@ -328,6 +283,9 @@
 			background: #eaf7f8;
 		}
 
+
+		/* BUTTON */
+
 		button {
 			display: inline-block;
 			padding: 13px 24px;
@@ -349,6 +307,7 @@
 			outline: 3px solid rgba(0,130,148,.25);
 			outline-offset: 2px;
 		}
+
 
 		/* RESULT */
 
@@ -401,6 +360,7 @@
 			line-height: 1.45;
 		}
 
+
 		/* BOTTOM DISCLAIMER */
 
 		.page-disclaimer {
@@ -410,16 +370,16 @@
 			line-height: 1.5;
 		}
 
+
 		/* SUSD FOOTER */
 
 		.susd-footer {
+			position: relative;
 			width: 100%;
 			margin-top: 45px;
 			overflow: visible;
 			background: transparent;
 		}
-
-		/* MAIN TEAL AREA */
 
 		.susd-footer-top {
 			position: relative;
@@ -427,16 +387,17 @@
 			background: #008294;
 		}
 
+
 		/* MOUNTAIN */
 
 		.susd-mountain {
 			position: absolute;
 			left: 50%;
-			transform: translateX(-50%);
 			bottom: 26px;
 			width: 75px;
 			height: auto;
 			line-height: 0;
+			transform: translateX(-50%);
 		}
 
 		.susd-mountain svg {
@@ -451,12 +412,14 @@
 			fill-rule: evenodd;
 		}
 
+
 		/* DARK TEAL STRIP */
 
 		.susd-footer-bottom {
 			height: 10px;
 			background: #005963;
 		}
+
 
 		/* MOBILE */
 
@@ -513,13 +476,9 @@
 
 			.susd-mountain {
 				left: 50%;
-				transform: translateX(-50%);
 				bottom: 26px;
 				width: 75px;
-			}
-
-			.susd-geometric-bg {
-				height: 520px;
+				transform: translateX(-50%);
 			}
 
 		}
@@ -530,171 +489,6 @@
 
 <body>
 
-	<!-- GEOMETRIC BACKGROUND -->
-
-	<div class="susd-geometric-bg" aria-hidden="true">
-
-		<svg
-			viewBox="0 0 1440 620"
-			preserveAspectRatio="xMidYMid slice"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-
-			<g class="geo-lines">
-
-				<!-- LEFT CLUSTER -->
-
-				<path d="
-					M0 175 L45 149 L90 175 L90 227 L45 253 L0 227
-					M45 253 L90 279 L135 253 L135 201 L90 175
-					M90 279 L135 305 L180 279 L180 227 L135 201
-					M135 305 L180 331 L225 305 L225 253 L180 227
-					M180 331 L225 357 L270 331 L270 279 L225 253
-					M225 357 L270 383 L315 357 L315 305 L270 279
-				"/>
-
-				<path d="
-					M0 279 L45 253 L90 279 L90 331 L45 357 L0 331
-					M45 357 L90 383 L135 357 L135 305
-					M90 383 L135 409 L180 383 L180 331
-					M135 409 L180 435 L225 409 L225 357
-				"/>
-
-				<!-- UPPER LEFT -->
-
-				<path class="geo-light" d="
-					M0 71 L45 45 L90 71 L90 123
-					M45 149 L45 97 L90 71
-					M90 123 L135 149 L180 123 L180 71
-					M135 45 L180 71
-				"/>
-
-				<!-- CENTER LEFT -->
-
-				<path d="
-					M270 227 L315 201 L360 227 L360 279 L315 305 L270 279
-					M315 305 L360 331 L405 305 L405 253 L360 227
-					M360 331 L405 357 L450 331 L450 279 L405 253
-				"/>
-
-				<path class="geo-light" d="
-					M225 149 L270 123 L315 149 L315 201
-					M270 123 L270 71 L315 97 L315 149
-					M405 149 L450 123 L495 149 L495 201
-				"/>
-
-				<!-- CENTER -->
-
-				<path d="
-					M450 227 L495 201 L540 227 L540 279 L495 305 L450 279
-					M495 201 L540 175 L585 201 L585 253 L540 279
-					M540 175 L585 149 L630 175 L630 227 L585 253
-					M585 253 L630 279 L675 253 L675 201 L630 175
-					M630 279 L675 305 L720 279 L720 227 L675 201
-					M675 305 L720 331 L765 305 L765 253 L720 227
-				"/>
-
-				<path d="
-					M540 279 L585 305 L630 279
-					M585 305 L585 357 L630 383 L675 357 L675 305
-					M630 383 L675 409 L720 383 L720 331
-				"/>
-
-				<!-- CENTER UPPER -->
-
-				<path class="geo-light" d="
-					M495 97 L540 123 L585 97 L630 123 L675 97
-					M540 123 L540 175
-					M585 97 L585 149
-					M630 123 L630 175
-					M675 97 L675 149
-				"/>
-
-				<!-- CENTER RIGHT -->
-
-				<path d="
-					M765 253 L810 227 L855 253 L855 305 L810 331 L765 305
-					M810 227 L855 201 L900 227 L900 279 L855 305
-					M855 201 L900 175 L945 201 L945 253 L900 279
-					M900 175 L945 149 L990 175 L990 227 L945 253
-				"/>
-
-				<path d="
-					M855 305 L900 331 L945 305 L945 253
-					M900 331 L945 357 L990 331 L990 279 L945 253
-					M945 357 L990 383 L1035 357 L1035 305 L990 279
-				"/>
-
-				<!-- UPPER RIGHT -->
-
-				<path class="geo-light" d="
-					M900 71 L945 97 L990 71 L1035 97
-					M945 97 L945 149
-					M990 71 L990 123
-					M1035 97 L1035 149
-				"/>
-
-				<!-- RIGHT CLUSTER -->
-
-				<path d="
-					M1035 201 L1080 175 L1125 201 L1125 253 L1080 279 L1035 253
-					M1080 175 L1125 149 L1170 175 L1170 227 L1125 253
-					M1125 149 L1170 123 L1215 149 L1215 201 L1170 227
-					M1170 227 L1215 253 L1260 227 L1260 175 L1215 149
-					M1215 253 L1260 279 L1305 253 L1305 201 L1260 175
-					M1260 279 L1305 305 L1350 279 L1350 227 L1305 201
-					M1305 305 L1350 331 L1395 305 L1395 253 L1350 227
-					M1395 305 L1440 279
-				"/>
-
-				<path d="
-					M1080 279 L1125 305 L1170 279 L1170 227
-					M1125 305 L1170 331 L1215 305 L1215 253
-					M1170 331 L1215 357 L1260 331 L1260 279
-					M1215 357 L1260 383 L1305 357 L1305 305
-					M1260 383 L1305 409 L1350 383 L1350 331
-					M1305 409 L1350 435 L1395 409 L1395 357
-					M1395 409 L1440 383
-				"/>
-
-				<!-- FAR RIGHT UPPER -->
-
-				<path class="geo-light" d="
-					M1170 71 L1215 97 L1260 71
-					M1215 97 L1215 149
-					M1260 71 L1305 45 L1350 71 L1350 123
-					M1305 45 L1305 0
-					M1350 71 L1395 97 L1440 71
-					M1395 97 L1395 149
-				"/>
-
-				<!-- LOWER FADE DETAILS -->
-
-				<path class="geo-light" d="
-					M45 357 L45 461
-					M135 409 L135 487
-					M225 409 L225 461
-					M315 357 L315 461
-					M405 357 L405 487
-					M495 305 L495 435
-					M585 357 L585 487
-					M675 409 L675 487
-					M765 305 L765 461
-					M855 305 L855 487
-					M945 357 L945 461
-					M1035 357 L1035 487
-					M1125 305 L1125 461
-					M1215 357 L1215 487
-					M1305 409 L1305 487
-					M1395 409 L1395 461
-				"/>
-
-			</g>
-
-		</svg>
-
-	</div>
-
 
 	<!-- DEVELOPMENT WARNING -->
 
@@ -704,7 +498,7 @@
 	>
 
 		<h1 id="development-heading">
-			IN DEVELOPMENT — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
+			IN DEVELOPMENT - This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
 		</h1>
 
 		<p>
@@ -715,6 +509,7 @@
 
 
 	<main>
+
 
 		<!-- HERO -->
 
@@ -734,11 +529,11 @@
 				>
 
 				<p class="eyebrow">
-					2027–28 School Year
+					2027-28 School Year
 				</p>
 
 				<h2>
-					Explore Your Student’s School Assignment
+					Explore Your Student's School Assignment
 				</h2>
 
 				<p class="intro">
@@ -785,9 +580,11 @@
 
 			</div>
 
+
 			<div class="tool-body">
 
 				<form id="assignment-form">
+
 
 					<!-- CURRENT SCHOOL -->
 
@@ -806,6 +603,7 @@
 								Select a school
 							</option>
 
+
 							<optgroup label="Elementary Schools">
 
 								<option value="bluebird">
@@ -822,7 +620,8 @@
 
 							</optgroup>
 
-							<optgroup label="K–8 Schools">
+
+							<optgroup label="K-8 Schools">
 
 								<option value="silverleaf">
 									Silverleaf K-8
@@ -869,6 +668,7 @@
 									</span>
 
 								</label>
+
 
 								<label class="radio-option">
 
@@ -1010,6 +810,7 @@
 		<p class="page-disclaimer">
 			This development tool contains fictional school names, locations and assignments. It does not represent an approved attendance boundary, enrollment determination, school closure, repurposing decision or future school assignment.
 		</p>
+
 
 	</main>
 
@@ -1438,1370 +1239,6 @@
 
 	</footer>
 
-</body>
-</html>
-
-		/* KEEP PAGE CONTENT ABOVE BACKGROUND */
-
-		.development-notice,
-		main,
-		.susd-footer {
-			position: relative;
-			z-index: 1;
-		}
-
-		/* DEVELOPMENT NOTICE */
-
-		.development-notice {
-			padding: 17px 24px;
-			background: #ffe080;
-			border-bottom: 1px solid #e5c65e;
-			text-align: center;
-		}
-
-		.development-notice h1 {
-			max-width: 1100px;
-			margin: 0 auto 5px;
-			color: #123f55;
-			font-size: 19px;
-			font-weight: 800;
-			line-height: 1.35;
-		}
-
-		.development-notice p {
-			max-width: 900px;
-			margin: 0 auto;
-			color: #253746;
-			font-size: 14px;
-		}
-
-		/* PAGE */
-
-		main {
-			max-width: 900px;
-			margin: 0 auto;
-			padding: 36px 24px 60px;
-		}
-
-		/* HERO */
-
-		.intro-card {
-			margin-bottom: 24px;
-			overflow: hidden;
-			background: #123f55;
-			border-radius: 12px;
-			color: #ffffff;
-			text-align: center;
-			box-shadow: 0 3px 12px rgba(0,0,0,.08);
-		}
-
-		.intro-accent {
-			height: 10px;
-			background: #008294;
-		}
-
-		.intro-content {
-			padding: 30px 32px 32px;
-		}
-
-		.intro-logo {
-			display: block;
-			width: 100%;
-			max-width: 300px;
-			height: auto;
-			margin: 0 auto 24px;
-		}
-
-		.eyebrow {
-			margin: 0 0 7px;
-			color: #bde9eb;
-			font-size: 14px;
-			font-weight: 800;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-		}
-
-		.intro-card h2 {
-			margin: 0 0 10px;
-			color: #ffffff;
-			font-size: 36px;
-			font-weight: 800;
-			line-height: 1.15;
-		}
-
-		.intro {
-			max-width: 700px;
-			margin: 0 auto;
-			color: #ffffff;
-			font-size: 17px;
-			line-height: 1.5;
-		}
-
-		/* ENROLLMENT NOTICE */
-
-		.enrollment-notice {
-			margin: 0 0 24px;
-			padding: 15px 18px;
-			background: #ffffff;
-			border-left: 5px solid #008294;
-			border-radius: 6px;
-			box-shadow: 0 2px 8px rgba(0,0,0,.05);
-		}
-
-		.enrollment-notice strong {
-			color: #123f55;
-		}
-
-		.enrollment-notice a {
-			color: #007681;
-			font-weight: 700;
-			text-decoration-thickness: 1px;
-			text-underline-offset: 3px;
-		}
-
-		.enrollment-notice a:hover {
-			color: #123f55;
-		}
-
-		/* TOOL CARD */
-
-		.tool-card {
-			overflow: hidden;
-			background: #ffffff;
-			border: 1px solid #dce3e5;
-			border-radius: 8px;
-			box-shadow: 0 3px 12px rgba(0,0,0,.07);
-		}
-
-		.tool-header {
-			padding: 18px 24px;
-			background: #eaf7f8;
-			border-bottom: 1px solid #d5eaec;
-		}
-
-		.tool-header h3 {
-			margin: 0;
-			color: #123f55;
-			font-size: 21px;
-			line-height: 1.3;
-		}
-
-		.tool-body {
-			padding: 26px;
-		}
-
-		/* FORM */
-
-		.form-group {
-			margin-bottom: 24px;
-		}
-
-		label {
-			display: block;
-			margin-bottom: 7px;
-			color: #123f55;
-			font-size: 16px;
-			font-weight: 700;
-		}
-
-		.field-help {
-			display: block;
-			margin: -2px 0 8px;
-			color: #66757d;
-			font-size: 13px;
-			line-height: 1.45;
-		}
-
-		select {
-			width: 100%;
-			padding: 13px 42px 13px 14px;
-			border: 1px solid #aebbc0;
-			border-radius: 5px;
-			background: #ffffff;
-			color: #253746;
-			font-family: inherit;
-			font-size: 16px;
-		}
-
-		select:focus {
-			outline: 3px solid rgba(0,130,148,.2);
-			border-color: #008294;
-		}
-
-		optgroup {
-			color: #123f55;
-			font-weight: 700;
-		}
-
-		option {
-			color: #253746;
-			font-weight: 400;
-		}
-
-		/* RADIO BUTTONS */
-
-		.radio-fieldset {
-			margin: 0;
-			padding: 0;
-			border: 0;
-		}
-
-		.radio-fieldset legend {
-			margin-bottom: 7px;
-			padding: 0;
-			color: #123f55;
-			font-size: 16px;
-			font-weight: 700;
-		}
-
-		.radio-options {
-			display: flex;
-			gap: 12px;
-			flex-wrap: wrap;
-			margin-top: 10px;
-		}
-
-		.radio-option {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			margin: 0;
-			padding: 11px 15px;
-			border: 1px solid #aebbc0;
-			border-radius: 6px;
-			background: #ffffff;
-			color: #253746;
-			font-size: 15px;
-			font-weight: 600;
-			cursor: pointer;
-		}
-
-		.radio-option:hover {
-			border-color: #008294;
-			background: #f4fbfb;
-		}
-
-		.radio-option input {
-			width: 18px;
-			height: 18px;
-			margin: 0;
-			accent-color: #008294;
-		}
-
-		.radio-option:has(input:checked) {
-			border-color: #008294;
-			background: #eaf7f8;
-		}
-
-		button {
-			display: inline-block;
-			padding: 13px 24px;
-			border: 0;
-			border-radius: 5px;
-			background: #008294;
-			color: #ffffff;
-			font-family: inherit;
-			font-size: 16px;
-			font-weight: 700;
-			cursor: pointer;
-		}
-
-		button:hover {
-			background: #006f7e;
-		}
-
-		button:focus {
-			outline: 3px solid rgba(0,130,148,.25);
-			outline-offset: 2px;
-		}
-
-		/* RESULT */
-
-		.result {
-			display: none;
-			margin-top: 28px;
-			padding: 24px;
-			background: #eaf7f8;
-			border-left: 6px solid #008294;
-			border-radius: 6px;
-		}
-
-		.result.active {
-			display: block;
-		}
-
-		.result-label {
-			margin: 0 0 4px;
-			color: #008294;
-			font-size: 13px;
-			font-weight: 800;
-			letter-spacing: 1px;
-			text-transform: uppercase;
-		}
-
-		.result-school {
-			margin: 0 0 8px;
-			color: #123f55;
-			font-size: 30px;
-			font-weight: 800;
-			line-height: 1.2;
-		}
-
-		.result-status {
-			margin: 0 0 12px;
-			color: #123f55;
-			font-weight: 700;
-		}
-
-		.result-description {
-			margin: 0;
-		}
-
-		.result-disclaimer {
-			margin: 15px 0 0;
-			padding-top: 13px;
-			border-top: 1px solid #c6dfe1;
-			color: #56676e;
-			font-size: 13px;
-			line-height: 1.45;
-		}
-
-		/* BOTTOM DISCLAIMER */
-
-		.page-disclaimer {
-			margin: 24px 4px 0;
-			color: #68787e;
-			font-size: 13px;
-			line-height: 1.5;
-		}
-
-		/* SUSD FOOTER */
-
-		.susd-footer {
-			width: 100%;
-			margin-top: 45px;
-			overflow: visible;
-			background: transparent;
-		}
-
-		/* MAIN TEAL AREA */
-
-		.susd-footer-top {
-			position: relative;
-			height: 26px;
-			background: #008294;
-		}
-
-		/* MOUNTAIN */
-
-		.susd-mountain {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 26px;
-			width: 75px;
-			height: auto;
-			line-height: 0;
-		}
-
-		.susd-mountain svg {
-			display: block;
-			width: 100%;
-			height: auto;
-			overflow: visible;
-		}
-
-		.susd-mountain polygon {
-			fill: #008294;
-			fill-rule: evenodd;
-		}
-
-		/* DARK TEAL STRIP */
-
-		.susd-footer-bottom {
-			height: 10px;
-			background: #005963;
-		}
-
-		/* MOBILE */
-
-		@media (max-width: 600px) {
-
-			main {
-				padding: 24px 16px 45px;
-			}
-
-			.development-notice {
-				padding: 15px 18px;
-			}
-
-			.development-notice h1 {
-				font-size: 16px;
-			}
-
-			.intro-content {
-				padding: 26px 20px 28px;
-			}
-
-			.intro-logo {
-				max-width: 260px;
-				margin-bottom: 21px;
-			}
-
-			.intro-card h2 {
-				font-size: 30px;
-			}
-
-			.intro {
-				font-size: 16px;
-			}
-
-			.tool-body {
-				padding: 21px;
-			}
-
-			.result-school {
-				font-size: 26px;
-			}
-
-			button {
-				width: 100%;
-			}
-
-			.radio-options {
-				flex-direction: column;
-			}
-
-			.radio-option {
-				width: 100%;
-			}
-
-			.susd-mountain {
-				left: 50%;
-				transform: translateX(-50%);
-				bottom: 26px;
-				width: 75px;
-			}
-
-			.susd-geometric-bg {
-				height: 520px;
-			}
-
-		}
-
-	</style>
-</head>
-
-
-<body>
-
-	<!-- GEOMETRIC BACKGROUND -->
-
-	<div class="susd-geometric-bg" aria-hidden="true">
-
-		<svg
-			viewBox="0 0 1440 620"
-			preserveAspectRatio="xMidYMid slice"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-
-			<g class="geo-lines">
-
-				<!-- LEFT CLUSTER -->
-
-				<path d="
-					M0 175 L45 149 L90 175 L90 227 L45 253 L0 227
-					M45 253 L90 279 L135 253 L135 201 L90 175
-					M90 279 L135 305 L180 279 L180 227 L135 201
-					M135 305 L180 331 L225 305 L225 253 L180 227
-					M180 331 L225 357 L270 331 L270 279 L225 253
-					M225 357 L270 383 L315 357 L315 305 L270 279
-				"/>
-
-				<path d="
-					M0 279 L45 253 L90 279 L90 331 L45 357 L0 331
-					M45 357 L90 383 L135 357 L135 305
-					M90 383 L135 409 L180 383 L180 331
-					M135 409 L180 435 L225 409 L225 357
-				"/>
-
-				<!-- UPPER LEFT -->
-
-				<path class="geo-light" d="
-					M0 71 L45 45 L90 71 L90 123
-					M45 149 L45 97 L90 71
-					M90 123 L135 149 L180 123 L180 71
-					M135 45 L180 71
-				"/>
-
-				<!-- CENTER LEFT -->
-
-				<path d="
-					M270 227 L315 201 L360 227 L360 279 L315 305 L270 279
-					M315 305 L360 331 L405 305 L405 253 L360 227
-					M360 331 L405 357 L450 331 L450 279 L405 253
-				"/>
-
-				<path class="geo-light" d="
-					M225 149 L270 123 L315 149 L315 201
-					M270 123 L270 71 L315 97 L315 149
-					M405 149 L450 123 L495 149 L495 201
-				"/>
-
-				<!-- CENTER -->
-
-				<path d="
-					M450 227 L495 201 L540 227 L540 279 L495 305 L450 279
-					M495 201 L540 175 L585 201 L585 253 L540 279
-					M540 175 L585 149 L630 175 L630 227 L585 253
-					M585 253 L630 279 L675 253 L675 201 L630 175
-					M630 279 L675 305 L720 279 L720 227 L675 201
-					M675 305 L720 331 L765 305 L765 253 L720 227
-				"/>
-
-				<path d="
-					M540 279 L585 305 L630 279
-					M585 305 L585 357 L630 383 L675 357 L675 305
-					M630 383 L675 409 L720 383 L720 331
-				"/>
-
-				<!-- CENTER UPPER -->
-
-				<path class="geo-light" d="
-					M495 97 L540 123 L585 97 L630 123 L675 97
-					M540 123 L540 175
-					M585 97 L585 149
-					M630 123 L630 175
-					M675 97 L675 149
-				"/>
-
-				<!-- CENTER RIGHT -->
-
-				<path d="
-					M765 253 L810 227 L855 253 L855 305 L810 331 L765 305
-					M810 227 L855 201 L900 227 L900 279 L855 305
-					M855 201 L900 175 L945 201 L945 253 L900 279
-					M900 175 L945 149 L990 175 L990 227 L945 253
-				"/>
-
-				<path d="
-					M855 305 L900 331 L945 305 L945 253
-					M900 331 L945 357 L990 331 L990 279 L945 253
-					M945 357 L990 383 L1035 357 L1035 305 L990 279
-				"/>
-
-				<!-- UPPER RIGHT -->
-
-				<path class="geo-light" d="
-					M900 71 L945 97 L990 71 L1035 97
-					M945 97 L945 149
-					M990 71 L990 123
-					M1035 97 L1035 149
-				"/>
-
-				<!-- RIGHT CLUSTER -->
-
-				<path d="
-					M1035 201 L1080 175 L1125 201 L1125 253 L1080 279 L1035 253
-					M1080 175 L1125 149 L1170 175 L1170 227 L1125 253
-					M1125 149 L1170 123 L1215 149 L1215 201 L1170 227
-					M1170 227 L1215 253 L1260 227 L1260 175 L1215 149
-					M1215 253 L1260 279 L1305 253 L1305 201 L1260 175
-					M1260 279 L1305 305 L1350 279 L1350 227 L1305 201
-					M1305 305 L1350 331 L1395 305 L1395 253 L1350 227
-					M1395 305 L1440 279
-				"/>
-
-				<path d="
-					M1080 279 L1125 305 L1170 279 L1170 227
-					M1125 305 L1170 331 L1215 305 L1215 253
-					M1170 331 L1215 357 L1260 331 L1260 279
-					M1215 357 L1260 383 L1305 357 L1305 305
-					M1260 383 L1305 409 L1350 383 L1350 331
-					M1305 409 L1350 435 L1395 409 L1395 357
-					M1395 409 L1440 383
-				"/>
-
-				<!-- FAR RIGHT UPPER -->
-
-				<path class="geo-light" d="
-					M1170 71 L1215 97 L1260 71
-					M1215 97 L1215 149
-					M1260 71 L1305 45 L1350 71 L1350 123
-					M1305 45 L1305 0
-					M1350 71 L1395 97 L1440 71
-					M1395 97 L1395 149
-				"/>
-
-				<!-- LOWER FADE DETAILS -->
-
-				<path class="geo-light" d="
-					M45 357 L45 461
-					M135 409 L135 487
-					M225 409 L225 461
-					M315 357 L315 461
-					M405 357 L405 487
-					M495 305 L495 435
-					M585 357 L585 487
-					M675 409 L675 487
-					M765 305 L765 461
-					M855 305 L855 487
-					M945 357 L945 461
-					M1035 357 L1035 487
-					M1125 305 L1125 461
-					M1215 357 L1215 487
-					M1305 409 L1305 487
-					M1395 409 L1395 461
-				"/>
-
-			</g>
-
-		</svg>
-
-	</div>
-
-
-	<!-- DEVELOPMENT WARNING -->
-
-	<section
-		class="development-notice"
-		aria-labelledby="development-heading"
-	>
-
-		<h1 id="development-heading">
-			IN DEVELOPMENT — This tool does not reflect any Scottsdale Unified School District Governing Board decisions.
-		</h1>
-
-		<p>
-			All school names, geographic areas and school assignments displayed in this development version are fictional and are being used only to test the functionality of this tool.
-		</p>
-
-	</section>
-
-
-	<main>
-
-		<!-- HERO -->
-
-		<section class="intro-card">
-
-			<div
-				class="intro-accent"
-				aria-hidden="true"
-			></div>
-
-			<div class="intro-content">
-
-				<img
-					class="intro-logo"
-					src="https://resources.finalsite.net/images/v1785176035/susdorg/yi7owewlhcjmhrk3hv2q/HeaderLogo.svg"
-					alt="Scottsdale Unified School District"
-				>
-
-				<p class="eyebrow">
-					2027–28 School Year
-				</p>
-
-				<h2>
-					Explore Your Student’s School Assignment
-				</h2>
-
-				<p class="intro">
-					Use this tool to see how the school assignment process could work for families affected by school boundary changes.
-				</p>
-
-			</div>
-
-		</section>
-
-
-		<!-- CURRENTLY ENROLLED NOTICE -->
-
-		<div class="enrollment-notice">
-
-			<strong>
-				⚠️ This tool is for currently enrolled SUSD students only.
-			</strong>
-
-			<br>
-
-			New to SUSD?
-
-			<a
-				href="https://www.susd.org/services/enrollment"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Learn how to enroll
-			</a>.
-
-		</div>
-
-
-		<!-- ASSIGNMENT TOOL -->
-
-		<section class="tool-card">
-
-			<div class="tool-header">
-
-				<h3>
-					Student Information
-				</h3>
-
-			</div>
-
-			<div class="tool-body">
-
-				<form id="assignment-form">
-
-					<!-- CURRENT SCHOOL -->
-
-					<div class="form-group">
-
-						<label for="current-school">
-							Current School
-						</label>
-
-						<select
-							id="current-school"
-							required
-						>
-
-							<option value="">
-								Select a school
-							</option>
-
-							<optgroup label="Elementary Schools">
-
-								<option value="bluebird">
-									Bluebird ES
-								</option>
-
-								<option value="ironwood">
-									Ironwood ES
-								</option>
-
-								<option value="sunrise">
-									Sunrise ES
-								</option>
-
-							</optgroup>
-
-							<optgroup label="K–8 Schools">
-
-								<option value="silverleaf">
-									Silverleaf K-8
-								</option>
-
-								<option value="trailhead">
-									Trailhead K-8
-								</option>
-
-							</optgroup>
-
-						</select>
-
-					</div>
-
-
-					<!-- ENROLLMENT STATUS -->
-
-					<div class="form-group">
-
-						<fieldset class="radio-fieldset">
-
-							<legend>
-								Enrollment Status
-							</legend>
-
-							<span class="field-help">
-								Select how your student is currently enrolled.
-							</span>
-
-							<div class="radio-options">
-
-								<label class="radio-option">
-
-									<input
-										type="radio"
-										name="enrollment-status"
-										value="resident"
-										required
-									>
-
-									<span>
-										Resident (Home School)
-									</span>
-
-								</label>
-
-								<label class="radio-option">
-
-									<input
-										type="radio"
-										name="enrollment-status"
-										value="open-enrollment"
-									>
-
-									<span>
-										Open Enrollment
-									</span>
-
-								</label>
-
-							</div>
-
-						</fieldset>
-
-					</div>
-
-
-					<!-- CURRENT GRADE -->
-
-					<div class="form-group">
-
-						<label for="current-grade">
-							Current Grade
-						</label>
-
-						<select
-							id="current-grade"
-							required
-						>
-
-							<option value="">
-								Select current grade
-							</option>
-
-							<option value="K">Kindergarten</option>
-							<option value="1">Grade 1</option>
-							<option value="2">Grade 2</option>
-							<option value="3">Grade 3</option>
-							<option value="4">Grade 4</option>
-							<option value="5">Grade 5</option>
-							<option value="6">Grade 6</option>
-							<option value="7">Grade 7</option>
-							<option value="8">Grade 8</option>
-
-						</select>
-
-					</div>
-
-
-					<!-- CONDITIONAL LOCATION QUESTION -->
-
-					<div
-						class="form-group"
-						id="area-group"
-						hidden
-					>
-
-						<label for="area">
-							Which area best describes where you live?
-						</label>
-
-						<span class="field-help">
-							These locations are fictional and are included for development testing only.
-						</span>
-
-						<select id="area">
-
-							<option value="">
-								Select an area
-							</option>
-
-							<option value="a">
-								North of Desert Willow Road
-							</option>
-
-							<option value="b">
-								Between Desert Willow Road and Canyon Trail
-							</option>
-
-							<option value="c">
-								South of Canyon Trail
-							</option>
-
-						</select>
-
-					</div>
-
-
-					<button type="submit">
-						Find My School
-					</button>
-
-				</form>
-
-
-				<!-- RESULT -->
-
-				<div
-					id="result"
-					class="result"
-					aria-live="polite"
-				>
-
-					<p class="result-label">
-						Development Result
-					</p>
-
-					<div
-						id="result-school"
-						class="result-school"
-					></div>
-
-					<p
-						id="result-status"
-						class="result-status"
-					></p>
-
-					<p
-						id="result-description"
-						class="result-description"
-					></p>
-
-					<p class="result-disclaimer">
-						This result uses fictional development data and does not represent a Governing Board decision or official SUSD school assignment.
-					</p>
-
-				</div>
-
-			</div>
-
-		</section>
-
-
-		<p class="page-disclaimer">
-			This development tool contains fictional school names, locations and assignments. It does not represent an approved attendance boundary, enrollment determination, school closure, repurposing decision or future school assignment.
-		</p>
-
-	</main>
-
-
-	<script>
-
-		const developmentAssignments = {
-
-			ironwood: {
-				name: "Ironwood ES",
-				requiresArea: true,
-				areas: {
-					a: {
-						elementary: "Painted Sky ES",
-						middle: "Highland MS"
-					},
-					b: {
-						elementary: "Juniper ES",
-						middle: "Horizon MS"
-					},
-					c: {
-						elementary: "Willow Creek ES",
-						middle: "Ridgeline MS"
-					}
-				}
-			},
-
-			sunrise: {
-				name: "Sunrise ES",
-				requiresArea: false,
-				default: {
-					elementary: "Starlight ES",
-					middle: "Vista Peak MS"
-				}
-			},
-
-			bluebird: {
-				name: "Bluebird ES",
-				requiresArea: true,
-				areas: {
-					a: {
-						elementary: "Juniper ES",
-						middle: "Horizon MS"
-					},
-					b: {
-						elementary: "Painted Sky ES",
-						middle: "Highland MS"
-					},
-					c: {
-						elementary: "Starlight ES",
-						middle: "Vista Peak MS"
-					}
-				}
-			},
-
-			silverleaf: {
-				name: "Silverleaf K-8",
-				requiresArea: true,
-				areas: {
-					a: {
-						elementary: "Silverleaf K-8",
-						middle: "Highland MS",
-						high: "Northstar HS"
-					},
-					b: {
-						elementary: "Silverleaf K-8",
-						middle: "Horizon MS",
-						high: "Canyon View HS"
-					},
-					c: {
-						elementary: "Silverleaf K-8",
-						middle: "Ridgeline MS",
-						high: "Sonoran Hills HS"
-					}
-				}
-			},
-
-			trailhead: {
-				name: "Trailhead K-8",
-				requiresArea: false,
-				default: {
-					elementary: "Trailhead K-8",
-					middle: "Trailhead K-8",
-					high: "Northstar HS"
-				}
-			}
-
-		};
-
-
-		/* FORM ELEMENTS */
-
-		const schoolSelect =
-			document.getElementById("current-school");
-
-		const enrollmentStatusRadios =
-			document.querySelectorAll(
-				'input[name="enrollment-status"]'
-			);
-
-		const gradeSelect =
-			document.getElementById("current-grade");
-
-		const areaGroup =
-			document.getElementById("area-group");
-
-		const areaSelect =
-			document.getElementById("area");
-
-		const form =
-			document.getElementById("assignment-form");
-
-		const result =
-			document.getElementById("result");
-
-		const resultSchool =
-			document.getElementById("result-school");
-
-		const resultStatus =
-			document.getElementById("result-status");
-
-		const resultDescription =
-			document.getElementById("result-description");
-
-
-		/* SHOW LOCATION QUESTION ONLY WHEN NEEDED */
-
-		schoolSelect.addEventListener(
-			"change",
-			function() {
-
-				const selectedSchool =
-					developmentAssignments[this.value];
-
-				clearResult();
-
-				if (
-					selectedSchool &&
-					selectedSchool.requiresArea
-				) {
-
-					areaGroup.hidden = false;
-					areaSelect.required = true;
-
-				} else {
-
-					areaGroup.hidden = true;
-					areaSelect.required = false;
-					areaSelect.value = "";
-
-				}
-
-			}
-		);
-
-
-		/* CLEAR RESULTS WHEN ANSWERS CHANGE */
-
-		enrollmentStatusRadios.forEach(
-			function(radio) {
-
-				radio.addEventListener(
-					"change",
-					clearResult
-				);
-
-			}
-		);
-
-		gradeSelect.addEventListener(
-			"change",
-			clearResult
-		);
-
-		areaSelect.addEventListener(
-			"change",
-			clearResult
-		);
-
-
-		/* PROCESS SCHOOL ASSIGNMENT */
-
-		form.addEventListener(
-			"submit",
-			function(event) {
-
-				event.preventDefault();
-
-				const schoolKey =
-					schoolSelect.value;
-
-				const selectedEnrollmentStatus =
-					document.querySelector(
-						'input[name="enrollment-status"]:checked'
-					);
-
-				const enrollmentStatus =
-					selectedEnrollmentStatus
-						? selectedEnrollmentStatus.value
-						: "";
-
-				const currentGrade =
-					gradeSelect.value;
-
-				const area =
-					areaSelect.value;
-
-				const schoolData =
-					developmentAssignments[schoolKey];
-
-
-				if (
-					!schoolData ||
-					!enrollmentStatus ||
-					currentGrade === ""
-				) {
-					return;
-				}
-
-
-				let assignmentSet;
-
-				if (schoolData.requiresArea) {
-
-					if (!area) {
-						return;
-					}
-
-					assignmentSet =
-						schoolData.areas[area];
-
-				} else {
-
-					assignmentSet =
-						schoolData.default;
-
-				}
-
-
-				const nextGrade =
-					getNextGrade(currentGrade);
-
-				const schoolLevel =
-					getSchoolLevel(nextGrade);
-
-				const assignedSchool =
-					assignmentSet[schoolLevel];
-
-
-				if (!assignedSchool) {
-
-					resultSchool.textContent =
-						"Assignment Not Available";
-
-					resultStatus.textContent =
-						"Enrollment Status: " +
-						formatEnrollmentStatus(
-							enrollmentStatus
-						);
-
-					resultDescription.textContent =
-						"This fictional development scenario does not currently contain an assignment for " +
-						formatGrade(nextGrade) +
-						".";
-
-					result.classList.add("active");
-
-					return;
-				}
-
-
-				resultSchool.textContent =
-					assignedSchool;
-
-				resultStatus.textContent =
-					"Enrollment Status: " +
-					formatEnrollmentStatus(
-						enrollmentStatus
-					);
-
-
-				let description =
-					"Your student is currently in " +
-					formatGrade(currentGrade) +
-					" at " +
-					schoolData.name +
-					". Next year, your student will be in " +
-					formatGrade(nextGrade) +
-					".";
-
-
-				if (schoolData.requiresArea) {
-
-					description +=
-						" Based on the location information you provided, this fictional development scenario assigns the student to " +
-						assignedSchool +
-						".";
-
-				} else {
-
-					description +=
-						" In this fictional development scenario, the student is assigned to " +
-						assignedSchool +
-						".";
-
-				}
-
-
-				resultDescription.textContent =
-					description;
-
-				result.classList.add("active");
-
-				result.scrollIntoView({
-					behavior: "smooth",
-					block: "nearest"
-				});
-
-			}
-		);
-
-
-		function getNextGrade(currentGrade) {
-
-			if (currentGrade === "K") {
-				return "1";
-			}
-
-			return String(
-				Number(currentGrade) + 1
-			);
-
-		}
-
-
-		function getSchoolLevel(grade) {
-
-			const gradeNumber =
-				Number(grade);
-
-			if (gradeNumber <= 5) {
-				return "elementary";
-			}
-
-			if (gradeNumber <= 8) {
-				return "middle";
-			}
-
-			return "high";
-
-		}
-
-
-		function formatGrade(grade) {
-
-			if (grade === "K") {
-				return "Kindergarten";
-			}
-
-			return "Grade " + grade;
-
-		}
-
-
-		function formatEnrollmentStatus(status) {
-
-			if (status === "resident") {
-				return "Resident (Home School)";
-			}
-
-			if (status === "open-enrollment") {
-				return "Open Enrollment";
-			}
-
-			return "";
-
-		}
-
-
-		function clearResult() {
-
-			result.classList.remove("active");
-
-			resultSchool.textContent = "";
-			resultStatus.textContent = "";
-			resultDescription.textContent = "";
-
-		}
-
-	</script>
-
-
-	<!-- FOOTER -->
-
-	<footer class="susd-footer" aria-hidden="true">
-
-		<div class="susd-footer-top">
-
-			<div class="susd-mountain">
-
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					viewBox="0 0 507.75 186.76"
-					preserveAspectRatio="xMidYMid meet"
-					aria-hidden="true"
-				>
-
-					<polygon
-						points="
-							0 186.76
-							146.2 61.31
-							184.4 92.43
-							290.98 0
-							507.75 186.28
-							0 186.76
-						"
-					/>
-
-				</svg>
-
-			</div>
-
-		</div>
-
-		<div class="susd-footer-bottom"></div>
-
-	</footer>
 
 </body>
 </html>
