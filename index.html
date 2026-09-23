@@ -11,48 +11,79 @@
 		* {
 			box-sizing: border-box;
 		}
-body {
-	margin: 0;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #253746;
-	line-height: 1.5;
-	background: #f4f9f9;
-	position: relative;
-}
 
-/* GEOMETRIC BACKGROUND */
+		html {
+			background: #f4f9f9;
+		}
 
-body::before {
-	content: "";
-	position: fixed;
-	inset: 0;
-	z-index: -1;
-	pointer-events: none;
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #253746;
+			line-height: 1.5;
+			background: #f4f9f9;
+			position: relative;
+			min-height: 100vh;
+		}
 
-	background-image:
-		linear-gradient(
-			30deg,
-			transparent 48%,
-			rgba(0, 130, 148, 0.07) 49%,
-			rgba(0, 130, 148, 0.07) 50%,
-			transparent 51%
-		),
-		linear-gradient(
-			150deg,
-			transparent 48%,
-			rgba(18, 63, 85, 0.05) 49%,
-			rgba(18, 63, 85, 0.05) 50%,
-			transparent 51%
-		);
+		/* GEOMETRIC BACKGROUND */
 
-	background-size:
-		180px 105px,
-		180px 105px;
+		.susd-geometric-bg {
+			position: fixed;
+			z-index: 0;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 620px;
+			transform: translateY(-50%);
+			pointer-events: none;
+			overflow: hidden;
+			opacity: 0.10;
 
-	background-position:
-		0 0,
-		90px 52px;
-}
+			-webkit-mask-image: linear-gradient(
+				to bottom,
+				transparent 0%,
+				#000 14%,
+				#000 86%,
+				transparent 100%
+			);
+
+			mask-image: linear-gradient(
+				to bottom,
+				transparent 0%,
+				#000 14%,
+				#000 86%,
+				transparent 100%
+			);
+		}
+
+		.susd-geometric-bg svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.geo-lines {
+			fill: none;
+			stroke: #123f55;
+			stroke-width: 1.25;
+			stroke-linecap: square;
+			stroke-linejoin: miter;
+		}
+
+		.geo-light {
+			opacity: 0.4;
+		}
+
+		/* KEEP PAGE CONTENT ABOVE BACKGROUND */
+
+		.development-notice,
+		main,
+		.susd-footer {
+			position: relative;
+			z-index: 1;
+		}
+
 		/* DEVELOPMENT NOTICE */
 
 		.development-notice {
@@ -378,65 +409,53 @@ body::before {
 			line-height: 1.5;
 		}
 
-	/* SUSD FOOTER */
+		/* SUSD FOOTER */
 
-.susd-footer {
-	width: 100%;
-	margin-top: 45px;
-	overflow: visible;
-	background: transparent;
-}
+		.susd-footer {
+			width: 100%;
+			margin-top: 45px;
+			overflow: visible;
+			background: transparent;
+		}
 
-/* MAIN TEAL AREA — REDUCED BY 50% */
+		/* MAIN TEAL AREA */
 
-.susd-footer-top {
-	position: relative;
-	height: 26px;
-	background: #008294;
-	);
-}
+		.susd-footer-top {
+			position: relative;
+			height: 26px;
+			background: #008294;
+		}
 
-/* MOUNTAIN */
+		/* MOUNTAIN */
 
-.susd-mountain {
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: 26px;
-	width: 75px;
-	height: auto;
-	line-height: 0;
-}
+		.susd-mountain {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 26px;
+			width: 75px;
+			height: auto;
+			line-height: 0;
+		}
 
-.susd-mountain svg {
-	display: block;
-	width: 100%;
-	height: auto;
-	overflow: visible;
-}
+		.susd-mountain svg {
+			display: block;
+			width: 100%;
+			height: auto;
+			overflow: visible;
+		}
 
-.susd-mountain polygon {
-	fill: #008294;
-	fill-rule: evenodd;
-}
+		.susd-mountain polygon {
+			fill: #008294;
+			fill-rule: evenodd;
+		}
 
-/* DARK TEAL STRIP */
+		/* DARK TEAL STRIP */
 
-.susd-footer-bottom {
-	height: 10px;
-	background: #005963;
-}
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-	.susd-mountain {
-		left: 22px;
-		width: 125px;
-	}
-
-}
+		.susd-footer-bottom {
+			height: 10px;
+			background: #005963;
+		}
 
 		/* MOBILE */
 
@@ -492,10 +511,14 @@ body::before {
 			}
 
 			.susd-mountain {
-				left: 22px;
-				width: 125px;
-				height: 27px;
-				top: -26px;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 26px;
+				width: 75px;
+			}
+
+			.susd-geometric-bg {
+				height: 520px;
 			}
 
 		}
@@ -505,6 +528,172 @@ body::before {
 
 
 <body>
+
+	<!-- GEOMETRIC BACKGROUND -->
+
+	<div class="susd-geometric-bg" aria-hidden="true">
+
+		<svg
+			viewBox="0 0 1440 620"
+			preserveAspectRatio="xMidYMid slice"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+
+			<g class="geo-lines">
+
+				<!-- LEFT CLUSTER -->
+
+				<path d="
+					M0 175 L45 149 L90 175 L90 227 L45 253 L0 227
+					M45 253 L90 279 L135 253 L135 201 L90 175
+					M90 279 L135 305 L180 279 L180 227 L135 201
+					M135 305 L180 331 L225 305 L225 253 L180 227
+					M180 331 L225 357 L270 331 L270 279 L225 253
+					M225 357 L270 383 L315 357 L315 305 L270 279
+				"/>
+
+				<path d="
+					M0 279 L45 253 L90 279 L90 331 L45 357 L0 331
+					M45 357 L90 383 L135 357 L135 305
+					M90 383 L135 409 L180 383 L180 331
+					M135 409 L180 435 L225 409 L225 357
+				"/>
+
+				<!-- UPPER LEFT -->
+
+				<path class="geo-light" d="
+					M0 71 L45 45 L90 71 L90 123
+					M45 149 L45 97 L90 71
+					M90 123 L135 149 L180 123 L180 71
+					M135 45 L180 71
+				"/>
+
+				<!-- CENTER LEFT -->
+
+				<path d="
+					M270 227 L315 201 L360 227 L360 279 L315 305 L270 279
+					M315 305 L360 331 L405 305 L405 253 L360 227
+					M360 331 L405 357 L450 331 L450 279 L405 253
+				"/>
+
+				<path class="geo-light" d="
+					M225 149 L270 123 L315 149 L315 201
+					M270 123 L270 71 L315 97 L315 149
+					M405 149 L450 123 L495 149 L495 201
+				"/>
+
+				<!-- CENTER -->
+
+				<path d="
+					M450 227 L495 201 L540 227 L540 279 L495 305 L450 279
+					M495 201 L540 175 L585 201 L585 253 L540 279
+					M540 175 L585 149 L630 175 L630 227 L585 253
+					M585 253 L630 279 L675 253 L675 201 L630 175
+					M630 279 L675 305 L720 279 L720 227 L675 201
+					M675 305 L720 331 L765 305 L765 253 L720 227
+				"/>
+
+				<path d="
+					M540 279 L585 305 L630 279
+					M585 305 L585 357 L630 383 L675 357 L675 305
+					M630 383 L675 409 L720 383 L720 331
+				"/>
+
+				<!-- CENTER UPPER -->
+
+				<path class="geo-light" d="
+					M495 97 L540 123 L585 97 L630 123 L675 97
+					M540 123 L540 175
+					M585 97 L585 149
+					M630 123 L630 175
+					M675 97 L675 149
+				"/>
+
+				<!-- CENTER RIGHT -->
+
+				<path d="
+					M765 253 L810 227 L855 253 L855 305 L810 331 L765 305
+					M810 227 L855 201 L900 227 L900 279 L855 305
+					M855 201 L900 175 L945 201 L945 253 L900 279
+					M900 175 L945 149 L990 175 L990 227 L945 253
+				"/>
+
+				<path d="
+					M855 305 L900 331 L945 305 L945 253
+					M900 331 L945 357 L990 331 L990 279 L945 253
+					M945 357 L990 383 L1035 357 L1035 305 L990 279
+				"/>
+
+				<!-- UPPER RIGHT -->
+
+				<path class="geo-light" d="
+					M900 71 L945 97 L990 71 L1035 97
+					M945 97 L945 149
+					M990 71 L990 123
+					M1035 97 L1035 149
+				"/>
+
+				<!-- RIGHT CLUSTER -->
+
+				<path d="
+					M1035 201 L1080 175 L1125 201 L1125 253 L1080 279 L1035 253
+					M1080 175 L1125 149 L1170 175 L1170 227 L1125 253
+					M1125 149 L1170 123 L1215 149 L1215 201 L1170 227
+					M1170 227 L1215 253 L1260 227 L1260 175 L1215 149
+					M1215 253 L1260 279 L1305 253 L1305 201 L1260 175
+					M1260 279 L1305 305 L1350 279 L1350 227 L1305 201
+					M1305 305 L1350 331 L1395 305 L1395 253 L1350 227
+					M1395 305 L1440 279
+				"/>
+
+				<path d="
+					M1080 279 L1125 305 L1170 279 L1170 227
+					M1125 305 L1170 331 L1215 305 L1215 253
+					M1170 331 L1215 357 L1260 331 L1260 279
+					M1215 357 L1260 383 L1305 357 L1305 305
+					M1260 383 L1305 409 L1350 383 L1350 331
+					M1305 409 L1350 435 L1395 409 L1395 357
+					M1395 409 L1440 383
+				"/>
+
+				<!-- FAR RIGHT UPPER -->
+
+				<path class="geo-light" d="
+					M1170 71 L1215 97 L1260 71
+					M1215 97 L1215 149
+					M1260 71 L1305 45 L1350 71 L1350 123
+					M1305 45 L1305 0
+					M1350 71 L1395 97 L1440 71
+					M1395 97 L1395 149
+				"/>
+
+				<!-- LOWER FADE DETAILS -->
+
+				<path class="geo-light" d="
+					M45 357 L45 461
+					M135 409 L135 487
+					M225 409 L225 461
+					M315 357 L315 461
+					M405 357 L405 487
+					M495 305 L495 435
+					M585 357 L585 487
+					M675 409 L675 487
+					M765 305 L765 461
+					M855 305 L855 487
+					M945 357 L945 461
+					M1035 357 L1035 487
+					M1125 305 L1125 461
+					M1215 357 L1215 487
+					M1305 409 L1305 487
+					M1395 409 L1395 461
+				"/>
+
+			</g>
+
+		</svg>
+
+	</div>
+
 
 	<!-- DEVELOPMENT WARNING -->
 
@@ -1212,37 +1401,41 @@ body::before {
 	</script>
 
 
+	<!-- FOOTER -->
+
 	<footer class="susd-footer" aria-hidden="true">
 
-	<div class="susd-footer-top">
+		<div class="susd-footer-top">
 
-		<div class="susd-mountain">
+			<div class="susd-mountain">
 
-			<svg
-				xmlns="http://www.w3.org/2000/svg"
-				viewBox="0 0 507.75 186.76"
-				preserveAspectRatio="xMidYMid meet"
-				aria-hidden="true"
-			>
-				<polygon
-					points="
-						0 186.76
-						146.2 61.31
-						184.4 92.43
-						290.98 0
-						507.75 186.28
-						0 186.76
-					"
-				/>
-			</svg>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 507.75 186.76"
+					preserveAspectRatio="xMidYMid meet"
+					aria-hidden="true"
+				>
+
+					<polygon
+						points="
+							0 186.76
+							146.2 61.31
+							184.4 92.43
+							290.98 0
+							507.75 186.28
+							0 186.76
+						"
+					/>
+
+				</svg>
+
+			</div>
 
 		</div>
 
-	</div>
+		<div class="susd-footer-bottom"></div>
 
-	<div class="susd-footer-bottom"></div>
-
-</footer>
+	</footer>
 
 </body>
 </html>
