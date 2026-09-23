@@ -17,63 +17,18 @@
 		}
 
 		body {
-			margin: 0;
-			font-family: Arial, Helvetica, sans-serif;
-			color: #253746;
-			line-height: 1.5;
-			background: #f4f9f9;
-			position: relative;
-			min-height: 100vh;
-		}
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #253746;
+	line-height: 1.5;
+	position: relative;
 
-		/* GEOMETRIC BACKGROUND */
+	background-color: #f4f9f9;
 
-		.susd-geometric-bg {
-			position: fixed;
-			z-index: 0;
-			top: 50%;
-			left: 0;
-			width: 100%;
-			height: 620px;
-			transform: translateY(-50%);
-			pointer-events: none;
-			overflow: hidden;
-			opacity: 0.10;
+	background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22240%22%20height%3D%22208%22%20viewBox%3D%220%200%20240%20208%22%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23008294%22%20stroke-opacity%3D%22.10%22%20stroke-width%3D%221%22%3E%3Cpath%20d%3D%22M0%200h80l40%2069-40%2070H0l40-70Zm80%200v46l40%2023%2040-23V0m-40%2069v70l40%2023%2040-23V69l-40-23m40%2023%2040-23V0M0%20139l40%2023v46m40-69v46l40%2023%2040-46m40-23%2040%2023m-80%200v46m40-69%2040-70M0%200l40%2023%2040-23M0%2069l40-46m0%20139%2040-23M200%20208v-23l40-23%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
 
-			-webkit-mask-image: linear-gradient(
-				to bottom,
-				transparent 0%,
-				#000 14%,
-				#000 86%,
-				transparent 100%
-			);
-
-			mask-image: linear-gradient(
-				to bottom,
-				transparent 0%,
-				#000 14%,
-				#000 86%,
-				transparent 100%
-			);
-		}
-
-		.susd-geometric-bg svg {
-			display: block;
-			width: 100%;
-			height: 100%;
-		}
-
-		.geo-lines {
-			fill: none;
-			stroke: #123f55;
-			stroke-width: 1.25;
-			stroke-linecap: square;
-			stroke-linejoin: miter;
-		}
-
-		.geo-light {
-			opacity: 0.4;
-		}
+	background-size: 240px 208px;
+}
 
 		/* KEEP PAGE CONTENT ABOVE BACKGROUND */
 
