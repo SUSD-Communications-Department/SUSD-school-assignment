@@ -345,54 +345,67 @@
 			line-height: 1.5;
 		}
 
-		/* SUSD FOOTER */
+	/* SUSD FOOTER */
 
-		.susd-footer {
-			width: 100%;
-			margin-top: 45px;
-			overflow: visible;
-			background: transparent;
-		}
+.susd-footer {
+	width: 100%;
+	margin-top: 45px;
+	overflow: visible;
+	background: transparent;
+}
 
-		.susd-footer-top {
-			position: relative;
-			height: 52px;
-			background: linear-gradient(
-				rgba(0,130,148,.92),
-				rgba(0,105,118,.92)
-			);
-		}
+/* MAIN TEAL AREA — REDUCED BY 50% */
 
-		/*
-			SOLID MOUNTAIN SILHOUETTE
-			Sits above the footer instead of inside it.
-		*/
+.susd-footer-top {
+	position: relative;
+	height: 26px;
+	background: linear-gradient(
+		rgba(0,130,148,.92),
+		rgba(0,105,118,.92)
+	);
+}
 
-		.susd-mountain {
-			position: absolute;
-			left: max(24px, calc((100% - 900px) / 2 + 24px));
-			top: -31px;
-			width: 150px;
-			height: 32px;
-		}
+/* MOUNTAIN */
 
-		.susd-mountain svg {
-			display: block;
-			width: 100%;
-			height: 100%;
-			overflow: visible;
-		}
+.susd-mountain {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 26px;
+	width: 150px;
+	height: auto;
+	line-height: 0;
+}
 
-		.susd-mountain path {
-			fill: #008294;
-		}
+.susd-mountain svg {
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
 
-		/* DARK TEAL STRIP */
+.susd-mountain polygon {
+	fill: #008294;
+	fill-rule: evenodd;
+}
 
-		.susd-footer-bottom {
-			height: 10px;
-			background: #005963;
-		}
+/* DARK TEAL STRIP */
+
+.susd-footer-bottom {
+	height: 10px;
+	background: #005963;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+	.susd-mountain {
+		left: 22px;
+		width: 125px;
+	}
+
+}
 
 		/* MOBILE */
 
@@ -1168,40 +1181,37 @@
 	</script>
 
 
-	<!-- SUSD FOOTER -->
-
 	<footer class="susd-footer" aria-hidden="true">
 
-		<div class="susd-footer-top">
+	<div class="susd-footer-top">
 
-			<div class="susd-mountain">
+		<div class="susd-mountain">
 
-				<svg
-					viewBox="0 0 150 32"
-					preserveAspectRatio="none"
-					aria-hidden="true"
-				>
-					<path
-						d="
-							M0 32
-							L31 9
-							L42 18
-							L65 0
-							L96 24
-							L109 14
-							L150 32
-							Z
-						"
-					/>
-				</svg>
-
-			</div>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 507.75 186.76"
+				preserveAspectRatio="xMidYMid meet"
+				aria-hidden="true"
+			>
+				<polygon
+					points="
+						0 186.76
+						146.2 61.31
+						184.4 92.43
+						290.98 0
+						507.75 186.28
+						0 186.76
+					"
+				/>
+			</svg>
 
 		</div>
 
-		<div class="susd-footer-bottom"></div>
+	</div>
 
-	</footer>
+	<div class="susd-footer-bottom"></div>
+
+</footer>
 
 </body>
 </html>
