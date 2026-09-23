@@ -12,96 +12,10 @@
 			box-sizing: border-box;
 		}
 
-	/* SUSD FOOTER */
-
-.susd-footer {
-	width: 100%;
-	margin-top: 75px;
-	overflow: visible;
-	background: transparent;
-}
-
-/* MAIN TEAL AREA */
-
-.susd-footer-top {
-	position: relative;
-	height: 70px;
-	background: linear-gradient(
-		rgba(0,130,148,.92),
-		rgba(0,105,118,.92)
-	);
-}
-
-/* GOLD MOUNTAIN */
-
-.susd-mountain {
-	position: absolute;
-	left: 130px;
-	top: -42px;
-	width: 140px;
-	height: 42px;
-}
-
-.susd-mountain span {
-	position: absolute;
-	display: block;
-	height: 1.25px;
-	background: #f2b800;
-	transform-origin: left center;
-}
-
-.susd-mountain .m1 {
-	left: 0;
-	bottom: 0;
-	width: 38px;
-	transform: rotate(-40deg);
-}
-
-.susd-mountain .m2 {
-	left: 29px;
-	bottom: 24px;
-	width: 15px;
-	transform: rotate(40deg);
-}
-
-.susd-mountain .m3 {
-	left: 40px;
-	bottom: 14px;
-	width: 29px;
-	transform: rotate(-42deg);
-}
-
-.susd-mountain .m4 {
-	left: 61px;
-	bottom: 34px;
-	width: 38px;
-	transform: rotate(43deg);
-}
-
-.susd-mountain .m5 {
-	left: 89px;
-	bottom: 8px;
-	width: 20px;
-	transform: rotate(-34deg);
-}
-
-.susd-mountain .m6 {
-	left: 105px;
-	bottom: 19px;
-	width: 34px;
-	transform: rotate(35deg);
-}
-
-/* DARK TEAL STRIP */
-
-.susd-footer-bottom {
-	height: 10px;
-	background: #005963;
-}
 		body {
 			margin: 0;
 			font-family: Arial, Helvetica, sans-serif;
-			background: #f4f6f7;
+			background: #f2f8f8;
 			color: #253746;
 			line-height: 1.5;
 		}
@@ -294,6 +208,61 @@
 			font-weight: 400;
 		}
 
+		/* RADIO BUTTONS */
+
+		.radio-fieldset {
+			margin: 0;
+			padding: 0;
+			border: 0;
+		}
+
+		.radio-fieldset legend {
+			margin-bottom: 7px;
+			padding: 0;
+			color: #123f55;
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.radio-options {
+			display: flex;
+			gap: 12px;
+			flex-wrap: wrap;
+			margin-top: 10px;
+		}
+
+		.radio-option {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			margin: 0;
+			padding: 11px 15px;
+			border: 1px solid #aebbc0;
+			border-radius: 6px;
+			background: #ffffff;
+			color: #253746;
+			font-size: 15px;
+			font-weight: 600;
+			cursor: pointer;
+		}
+
+		.radio-option:hover {
+			border-color: #008294;
+			background: #f4fbfb;
+		}
+
+		.radio-option input {
+			width: 18px;
+			height: 18px;
+			margin: 0;
+			accent-color: #008294;
+		}
+
+		.radio-option:has(input:checked) {
+			border-color: #008294;
+			background: #eaf7f8;
+		}
+
 		button {
 			display: inline-block;
 			padding: 13px 24px;
@@ -376,6 +345,55 @@
 			line-height: 1.5;
 		}
 
+		/* SUSD FOOTER */
+
+		.susd-footer {
+			width: 100%;
+			margin-top: 45px;
+			overflow: visible;
+			background: transparent;
+		}
+
+		.susd-footer-top {
+			position: relative;
+			height: 52px;
+			background: linear-gradient(
+				rgba(0,130,148,.92),
+				rgba(0,105,118,.92)
+			);
+		}
+
+		/*
+			SOLID MOUNTAIN SILHOUETTE
+			Sits above the footer instead of inside it.
+		*/
+
+		.susd-mountain {
+			position: absolute;
+			left: max(24px, calc((100% - 900px) / 2 + 24px));
+			top: -31px;
+			width: 150px;
+			height: 32px;
+		}
+
+		.susd-mountain svg {
+			display: block;
+			width: 100%;
+			height: 100%;
+			overflow: visible;
+		}
+
+		.susd-mountain path {
+			fill: #008294;
+		}
+
+		/* DARK TEAL STRIP */
+
+		.susd-footer-bottom {
+			height: 10px;
+			background: #005963;
+		}
+
 		/* MOBILE */
 
 		@media (max-width: 600px) {
@@ -421,6 +439,21 @@
 				width: 100%;
 			}
 
+			.radio-options {
+				flex-direction: column;
+			}
+
+			.radio-option {
+				width: 100%;
+			}
+
+			.susd-mountain {
+				left: 22px;
+				width: 125px;
+				height: 27px;
+				top: -26px;
+			}
+
 		}
 
 	</style>
@@ -428,7 +461,6 @@
 
 
 <body>
-
 
 	<!-- DEVELOPMENT WARNING -->
 
@@ -448,9 +480,7 @@
 	</section>
 
 
-
 	<main>
-
 
 		<!-- HERO -->
 
@@ -486,7 +516,6 @@
 		</section>
 
 
-
 		<!-- CURRENTLY ENROLLED NOTICE -->
 
 		<div class="enrollment-notice">
@@ -510,7 +539,6 @@
 		</div>
 
 
-
 		<!-- ASSIGNMENT TOOL -->
 
 		<section class="tool-card">
@@ -523,11 +551,9 @@
 
 			</div>
 
-
 			<div class="tool-body">
 
 				<form id="assignment-form">
-
 
 					<!-- CURRENT SCHOOL -->
 
@@ -546,7 +572,6 @@
 								Select a school
 							</option>
 
-
 							<optgroup label="Elementary Schools">
 
 								<option value="bluebird">
@@ -562,7 +587,6 @@
 								</option>
 
 							</optgroup>
-
 
 							<optgroup label="K–8 Schools">
 
@@ -581,59 +605,56 @@
 					</div>
 
 
-
 					<!-- ENROLLMENT STATUS -->
 
-<div class="form-group">
+					<div class="form-group">
 
-	<fieldset class="radio-fieldset">
+						<fieldset class="radio-fieldset">
 
-		<legend>
-			Enrollment Status
-		</legend>
+							<legend>
+								Enrollment Status
+							</legend>
 
-		<span class="field-help">
-			Select how your student is currently enrolled.
-		</span>
+							<span class="field-help">
+								Select how your student is currently enrolled.
+							</span>
 
-		<div class="radio-options">
+							<div class="radio-options">
 
-			<label class="radio-option">
+								<label class="radio-option">
 
-				<input
-					type="radio"
-					name="enrollment-status"
-					value="resident"
-					required
-				>
+									<input
+										type="radio"
+										name="enrollment-status"
+										value="resident"
+										required
+									>
 
-				<span>
-					Resident (Home School)
-				</span>
+									<span>
+										Resident (Home School)
+									</span>
 
-			</label>
+								</label>
 
+								<label class="radio-option">
 
-			<label class="radio-option">
+									<input
+										type="radio"
+										name="enrollment-status"
+										value="open-enrollment"
+									>
 
-				<input
-					type="radio"
-					name="enrollment-status"
-					value="open-enrollment"
-				>
+									<span>
+										Open Enrollment
+									</span>
 
-				<span>
-					Open Enrollment
-				</span>
+								</label>
 
-			</label>
+							</div>
 
-		</div>
+						</fieldset>
 
-	</fieldset>
-
-</div>
-
+					</div>
 
 
 					<!-- CURRENT GRADE -->
@@ -653,46 +674,19 @@
 								Select current grade
 							</option>
 
-							<option value="K">
-								Kindergarten
-							</option>
-
-							<option value="1">
-								Grade 1
-							</option>
-
-							<option value="2">
-								Grade 2
-							</option>
-
-							<option value="3">
-								Grade 3
-							</option>
-
-							<option value="4">
-								Grade 4
-							</option>
-
-							<option value="5">
-								Grade 5
-							</option>
-
-							<option value="6">
-								Grade 6
-							</option>
-
-							<option value="7">
-								Grade 7
-							</option>
-
-							<option value="8">
-								Grade 8
-							</option>
+							<option value="K">Kindergarten</option>
+							<option value="1">Grade 1</option>
+							<option value="2">Grade 2</option>
+							<option value="3">Grade 3</option>
+							<option value="4">Grade 4</option>
+							<option value="5">Grade 5</option>
+							<option value="6">Grade 6</option>
+							<option value="7">Grade 7</option>
+							<option value="8">Grade 8</option>
 
 						</select>
 
 					</div>
-
 
 
 					<!-- CONDITIONAL LOCATION QUESTION -->
@@ -734,14 +728,11 @@
 					</div>
 
 
-
 					<button type="submit">
 						Find My School
 					</button>
 
-
 				</form>
-
 
 
 				<!-- RESULT -->
@@ -777,177 +768,113 @@
 
 				</div>
 
-
 			</div>
 
 		</section>
 
 
-
-		<!-- DEVELOPMENT DISCLAIMER -->
-
 		<p class="page-disclaimer">
 			This development tool contains fictional school names, locations and assignments. It does not represent an approved attendance boundary, enrollment determination, school closure, repurposing decision or future school assignment.
 		</p>
 
-
 	</main>
-
 
 
 	<script>
 
-		/*
-			=========================================================
-			SUSD SCHOOL ASSIGNMENT TOOL
-			FICTIONAL DEVELOPMENT DATA ONLY
-			=========================================================
-
-			These schools and assignments are fictional.
-
-			Enrollment status is currently collected and displayed
-			but DOES NOT affect the assignment logic.
-
-			=========================================================
-		*/
-
-
 		const developmentAssignments = {
 
-
-			/* ELEMENTARY */
-
 			ironwood: {
-
 				name: "Ironwood ES",
-
 				requiresArea: true,
-
 				areas: {
-
 					a: {
 						elementary: "Painted Sky ES",
 						middle: "Highland MS"
 					},
-
 					b: {
 						elementary: "Juniper ES",
 						middle: "Horizon MS"
 					},
-
 					c: {
 						elementary: "Willow Creek ES",
 						middle: "Ridgeline MS"
 					}
-
 				}
-
 			},
 
-
 			sunrise: {
-
 				name: "Sunrise ES",
-
 				requiresArea: false,
-
 				default: {
 					elementary: "Starlight ES",
 					middle: "Vista Peak MS"
 				}
-
 			},
 
-
 			bluebird: {
-
 				name: "Bluebird ES",
-
 				requiresArea: true,
-
 				areas: {
-
 					a: {
 						elementary: "Juniper ES",
 						middle: "Horizon MS"
 					},
-
 					b: {
 						elementary: "Painted Sky ES",
 						middle: "Highland MS"
 					},
-
 					c: {
 						elementary: "Starlight ES",
 						middle: "Vista Peak MS"
 					}
-
 				}
-
 			},
 
-
-
-			/* K–8 */
-
 			silverleaf: {
-
 				name: "Silverleaf K-8",
-
 				requiresArea: true,
-
 				areas: {
-
 					a: {
 						elementary: "Silverleaf K-8",
 						middle: "Highland MS",
 						high: "Northstar HS"
 					},
-
 					b: {
 						elementary: "Silverleaf K-8",
 						middle: "Horizon MS",
 						high: "Canyon View HS"
 					},
-
 					c: {
 						elementary: "Silverleaf K-8",
 						middle: "Ridgeline MS",
 						high: "Sonoran Hills HS"
 					}
-
 				}
-
 			},
 
-
 			trailhead: {
-
 				name: "Trailhead K-8",
-
 				requiresArea: false,
-
 				default: {
 					elementary: "Trailhead K-8",
 					middle: "Trailhead K-8",
 					high: "Northstar HS"
 				}
-
 			}
 
 		};
 
 
-
-		/*
-			FORM ELEMENTS
-		*/
+		/* FORM ELEMENTS */
 
 		const schoolSelect =
 			document.getElementById("current-school");
 
-		const enrollmentStatusSelect =
-			document.getElementById("enrollment-status");
+		const enrollmentStatusRadios =
+			document.querySelectorAll(
+				'input[name="enrollment-status"]'
+			);
 
 		const gradeSelect =
 			document.getElementById("current-grade");
@@ -974,10 +901,7 @@
 			document.getElementById("result-description");
 
 
-
-		/*
-			SHOW LOCATION QUESTION ONLY WHEN NEEDED
-		*/
+		/* SHOW LOCATION QUESTION ONLY WHEN NEEDED */
 
 		schoolSelect.addEventListener(
 			"change",
@@ -986,9 +910,7 @@
 				const selectedSchool =
 					developmentAssignments[this.value];
 
-
 				clearResult();
-
 
 				if (
 					selectedSchool &&
@@ -996,15 +918,12 @@
 				) {
 
 					areaGroup.hidden = false;
-
 					areaSelect.required = true;
 
 				} else {
 
 					areaGroup.hidden = true;
-
 					areaSelect.required = false;
-
 					areaSelect.value = "";
 
 				}
@@ -1013,22 +932,23 @@
 		);
 
 
+		/* CLEAR RESULTS WHEN ANSWERS CHANGE */
 
-		/*
-			CLEAR OLD RESULTS WHEN ANSWERS CHANGE
-		*/
+		enrollmentStatusRadios.forEach(
+			function(radio) {
 
-		enrollmentStatusSelect.addEventListener(
-			"change",
-			clearResult
+				radio.addEventListener(
+					"change",
+					clearResult
+				);
+
+			}
 		);
-
 
 		gradeSelect.addEventListener(
 			"change",
 			clearResult
 		);
-
 
 		areaSelect.addEventListener(
 			"change",
@@ -1036,10 +956,7 @@
 		);
 
 
-
-		/*
-			PROCESS SCHOOL ASSIGNMENT
-		*/
+		/* PROCESS SCHOOL ASSIGNMENT */
 
 		form.addEventListener(
 			"submit",
@@ -1047,68 +964,50 @@
 
 				event.preventDefault();
 
-
 				const schoolKey =
 					schoolSelect.value;
 
+				const selectedEnrollmentStatus =
+					document.querySelector(
+						'input[name="enrollment-status"]:checked'
+					);
 
 				const enrollmentStatus =
-					enrollmentStatusSelect.value;
-
+					selectedEnrollmentStatus
+						? selectedEnrollmentStatus.value
+						: "";
 
 				const currentGrade =
 					gradeSelect.value;
 
-
 				const area =
 					areaSelect.value;
-
 
 				const schoolData =
 					developmentAssignments[schoolKey];
 
-
-
-				/*
-					VERIFY REQUIRED ANSWERS
-				*/
 
 				if (
 					!schoolData ||
 					!enrollmentStatus ||
 					currentGrade === ""
 				) {
-
 					return;
-
 				}
 
 
-
-				/*
-					GET CORRECT GEOGRAPHIC
-					ASSIGNMENT SET
-				*/
-
 				let assignmentSet;
-
 
 				if (schoolData.requiresArea) {
 
-
 					if (!area) {
-
 						return;
-
 					}
-
 
 					assignmentSet =
 						schoolData.areas[area];
 
-
 				} else {
-
 
 					assignmentSet =
 						schoolData.default;
@@ -1116,45 +1015,20 @@
 				}
 
 
-
-				/*
-					DETERMINE NEXT YEAR'S GRADE
-				*/
-
 				const nextGrade =
 					getNextGrade(currentGrade);
 
-
-
-				/*
-					DETERMINE NEXT YEAR'S
-					SCHOOL LEVEL
-				*/
-
 				const schoolLevel =
 					getSchoolLevel(nextGrade);
-
-
-
-				/*
-					FIND FICTIONAL ASSIGNMENT
-				*/
 
 				const assignedSchool =
 					assignmentSet[schoolLevel];
 
 
-
-				/*
-					NO ASSIGNMENT AVAILABLE
-				*/
-
 				if (!assignedSchool) {
-
 
 					resultSchool.textContent =
 						"Assignment Not Available";
-
 
 					resultStatus.textContent =
 						"Enrollment Status: " +
@@ -1162,36 +1036,25 @@
 							enrollmentStatus
 						);
 
-
 					resultDescription.textContent =
 						"This fictional development scenario does not currently contain an assignment for " +
 						formatGrade(nextGrade) +
 						".";
 
-
 					result.classList.add("active");
 
-
 					return;
-
 				}
 
 
-
-				/*
-					DISPLAY ASSIGNMENT
-				*/
-
 				resultSchool.textContent =
 					assignedSchool;
-
 
 				resultStatus.textContent =
 					"Enrollment Status: " +
 					formatEnrollmentStatus(
 						enrollmentStatus
 					);
-
 
 
 				let description =
@@ -1204,18 +1067,14 @@
 					".";
 
 
-
 				if (schoolData.requiresArea) {
-
 
 					description +=
 						" Based on the location information you provided, this fictional development scenario assigns the student to " +
 						assignedSchool +
 						".";
 
-
 				} else {
-
 
 					description +=
 						" In this fictional development scenario, the student is assigned to " +
@@ -1225,13 +1084,10 @@
 				}
 
 
-
 				resultDescription.textContent =
 					description;
 
-
 				result.classList.add("active");
-
 
 				result.scrollIntoView({
 					behavior: "smooth",
@@ -1242,19 +1098,11 @@
 		);
 
 
-
-		/*
-			NEXT GRADE
-		*/
-
 		function getNextGrade(currentGrade) {
 
 			if (currentGrade === "K") {
-
 				return "1";
-
 			}
-
 
 			return String(
 				Number(currentGrade) + 1
@@ -1263,123 +1111,97 @@
 		}
 
 
-
-		/*
-			SCHOOL LEVEL
-
-			DEVELOPMENT LOGIC ONLY:
-
-			K–5 = Elementary
-			6–8 = Middle
-			9–12 = High
-		*/
-
 		function getSchoolLevel(grade) {
 
 			const gradeNumber =
 				Number(grade);
 
-
 			if (gradeNumber <= 5) {
-
 				return "elementary";
-
 			}
-
 
 			if (gradeNumber <= 8) {
-
 				return "middle";
-
 			}
-
 
 			return "high";
 
 		}
 
 
-
-		/*
-			FORMAT GRADE
-		*/
-
 		function formatGrade(grade) {
 
 			if (grade === "K") {
-
 				return "Kindergarten";
-
 			}
-
 
 			return "Grade " + grade;
 
 		}
 
 
-
-		/*
-			FORMAT ENROLLMENT STATUS
-		*/
-
 		function formatEnrollmentStatus(status) {
 
 			if (status === "resident") {
-
 				return "Resident (Home School)";
-
 			}
-
 
 			if (status === "open-enrollment") {
-
 				return "Open Enrollment";
-
 			}
-
 
 			return "";
 
 		}
 
 
-
-		/*
-			CLEAR PREVIOUS RESULT
-		*/
-
 		function clearResult() {
 
 			result.classList.remove("active");
 
 			resultSchool.textContent = "";
-
 			resultStatus.textContent = "";
-
 			resultDescription.textContent = "";
 
 		}
 
 	</script>
-<footer class="susd-footer" aria-hidden="true">
 
-	<div class="susd-footer-top">
 
-		<div class="susd-mountain">
-			<span class="m1"></span>
-			<span class="m2"></span>
-			<span class="m3"></span>
-			<span class="m4"></span>
-			<span class="m5"></span>
-			<span class="m6"></span>
+	<!-- SUSD FOOTER -->
+
+	<footer class="susd-footer" aria-hidden="true">
+
+		<div class="susd-footer-top">
+
+			<div class="susd-mountain">
+
+				<svg
+					viewBox="0 0 150 32"
+					preserveAspectRatio="none"
+					aria-hidden="true"
+				>
+					<path
+						d="
+							M0 32
+							L31 9
+							L42 18
+							L65 0
+							L96 24
+							L109 14
+							L150 32
+							Z
+						"
+					/>
+				</svg>
+
+			</div>
+
 		</div>
 
-	</div>
+		<div class="susd-footer-bottom"></div>
 
-	<div class="susd-footer-bottom"></div>
-
-</footer>
+	</footer>
 
 </body>
 </html>
